@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+	<header>
+		<language_version>1.02</language_version>
+		<author>AUDI Electronics Venture GmbH</author>
+		<date_creation>07.04.2010</date_creation>
+		<date_change>06.05.2014</date_change>
+		<description>ADTF Common Description File</description>
+		<ext_declaration key="a" value="a" />
+		<ext_declaration key="b" value="b" />
+		<ext_declaration key="d" value="d" />
+		<ext_declaration key="e" value="e" />
+	</header>
+	<units>
+		<baseunit description="a" name="a" symbol="a" />
+		<baseunit description="b" name="b" symbol="b" />
+		<baseunit description="d" name="d" symbol="d" />
+		<baseunit description="e" name="e" symbol="e" />
+		<baseunit description="this is the no unit class" name="nou" symbol="" />
+		<prefixes name="a" power="1" symbol="a" />
+		<prefixes name="b" power="1" symbol="b" />
+		<prefixes name="d" power="1" symbol="d" />
+		<prefixes name="e" power="1" symbol="e" />
+		<unit name="a">
+			<numerator>1</numerator>
+			<denominator>1</denominator>
+			<offset>1.000000</offset>
+			<refUnit name="a" power="1" prefix="a" />
+			<refUnit name="b" power="1" prefix="b" />
+			<refUnit name="d" power="1" prefix="d" />
+			<refUnit name="e" power="1" prefix="e" />
+		</unit>
+		<unit name="b">
+			<numerator>2</numerator>
+			<denominator>2</denominator>
+			<offset>2.000000</offset>
+		</unit>
+		<unit name="d">
+			<numerator>4</numerator>
+			<denominator>4</denominator>
+			<offset>4.000000</offset>
+		</unit>
+		<unit name="e">
+			<numerator>5</numerator>
+			<denominator>5</denominator>
+			<offset>5.000000</offset>
+		</unit>
+	</units>
+	<datatypes>
+		<datatype description="predefined ADTF tBool datatype" name="tBool" size="8" />
+		<datatype description="predefined ADTF tChar datatype" name="tChar" size="8" />
+		<datatype description="predefined ADTF tFloat32 datatype" name="tFloat32" size="32" />
+		<datatype description="predefined ADTF tFloat64 datatype" name="tFloat64" size="64" />
+		<datatype description="predefined ADTF tInt16 datatype" name="tInt16" size="16" />
+		<datatype description="predefined ADTF tInt32 datatype" name="tInt32" size="32" />
+		<datatype description="predefined ADTF tInt64 datatype" name="tInt64" size="64" />
+		<datatype description="predefined ADTF tInt8 datatype" name="tInt8" size="8" />
+		<datatype description="predefined ADTF tUInt16 datatype" name="tUInt16" size="16" />
+		<datatype description="predefined ADTF tUInt32 datatype" name="tUInt32" size="32" />
+		<datatype description="predefined ADTF tUInt64 datatype" name="tUInt64" size="64" />
+		<datatype description="predefined ADTF tUInt8 datatype" name="tUInt8" size="8" />
+	</datatypes>
+	<enums>
+		<enum name="test_enum" type="tUInt32">
+			<element name="test_eum_element" value="99" />
+		</enum>
+	</enums>
+	<structs>
+		<struct alignment="1" name="tHeaderStruct" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui32HeaderVal" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="f64HeaderVal" type="tFloat64" />
+		</struct>
+		<struct alignment="1" name="test_complex_dt" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="a" type="tUInt64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="b" type="tInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="10" name="d" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="14" name="e" type="tUInt8" />
+		</struct>
+	</structs>
+	<streams />
+</adtf:ddl>

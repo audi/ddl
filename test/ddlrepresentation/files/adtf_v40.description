@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+    <header>
+        <language_version>4.00</language_version>
+        <author>AUDI Electronics Venture GmbH</author>
+        <date_creation>20130703</date_creation>
+        <date_change />
+        <description>ADTF Common Description File</description>
+    </header>
+    <units/>
+    <datatypes/>
+    <structs>        
+        <struct alignment="4" name="tTest" version="1" ddlversion="2.0">
+            <element name="bBool" type="tBool" arraysize="1">
+                <serialized byteorder="LE" bytepos="0" bitpos="0" numbits="8"/>
+                <deserialized alignment="1"/>
+            </element>
+            <element name="nInt8" type="tInt8" arraysize="1">
+                <serialized byteorder="LE" bytepos="1" bitpos="0" numbits="8"/>
+                <deserialized alignment="1"/>
+            </element>
+            <element name="nUInt32" type="tUInt32" arraysize="1">
+                <serialized byteorder="LE" bytepos="2" bitpos="0" numbits="32"/>
+                <deserialized alignment="4"/>
+            </element>
+            <element name="fFloat32" type="tFloat32" arraysize="1">
+                <serialized byteorder="LE" bytepos="6" bitpos="0" numbits="32"/>
+                <deserialized alignment="4"/>
+            </element>
+        </struct>                                
+    </structs>
+    <streams/>
+    <enums/>
+    <streammetatypes>
+        <streammetatype name="test_parent_not_yet_defined" version="1" parent="adtf/default"/>
+        <streammetatype name="adtf/default" version="1">
+            <property name="md_struct" type="string"/>
+            <property name="md_definitions" type="string"/>
+        </streammetatype>
+        <streammetatype name="test" version="1" parent="adtf/default">
+            <property name="test_prop" type="tInt32"/>            
+        </streammetatype>
+    </streammetatypes>
+</adtf:ddl>

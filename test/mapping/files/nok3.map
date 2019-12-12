@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- Missing <language_version>, <author>, <date_creation>, <date_change> or <description> element in header -->
+<mapping>
+    <header>
+    </header>
+
+    <targets>
+        <target name="Signal" type="tFEP_Driver_DriverCtrl">
+        </target>
+    </targets>
+</mapping>

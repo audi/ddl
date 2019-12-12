@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+ <header>
+  <language_version>3.00</language_version>
+  <author>KERNAND</author>
+  <date_creation>24.06.2014</date_creation>
+  <date_change>31.03.2015</date_change>
+  <description>FEP Driver standard interfaces</description>
+ </header>
+ <units />
+ <datatypes>
+  <datatype description="predefined ADTF tBool datatype" name="tBool" size="8" />
+  <datatype description="predefined ADTF tChar datatype" name="tChar" size="8" />
+  <datatype description="predefined ADTF tUInt8 datatype" name="tUInt8" size="8" />
+  <datatype description="predefined ADTF tInt8 datatype" name="tInt8" size="8" />
+  <datatype description="predefined ADTF tUInt16 datatype" name="tUInt16" size="16" />
+  <datatype description="predefined ADTF tInt16 datatype" name="tInt16" size="16" />
+  <datatype description="predefined ADTF tUInt32 datatype" name="tUInt32" size="32" />
+  <datatype description="predefined ADTF tInt32 datatype" name="tInt32" size="32" />
+  <datatype description="predefined ADTF tUInt64 datatype" name="tUInt64" size="64" />
+  <datatype description="predefined ADTF tInt64 datatype" name="tInt64" size="64" />
+  <datatype description="predefined ADTF tFloat32 datatype" name="tFloat32" size="32" />
+  <datatype description="predefined ADTF tFloat64 datatype" name="tFloat64" size="64" />
+ </datatypes>
+ <enums>
+  <enum name="tFEP_Driver_WiperState" type="tUInt8">
+   <element name="WS_Off" value="0" />
+   <element name="WS_Auto" value="1" />
+   <element name="WS_Interval" value="2" />
+   <element name="WS_OnStandard" value="3" />
+   <element name="WS_OnFast" value="4" />
+  </enum>
+  <enum name="tFEP_Driver_LightState" type="tUInt8">
+   <element name="LS_Off" value="0" />
+   <element name="LS_Auto" value="1" />
+   <element name="LS_Parking" value="2" />
+   <element name="LS_OnLowBeam" value="3" />
+   <element name="LS_OnHighBeam" value="4" />
+  </enum>
+  <enum name="tFEP_Driver_AalaInterventionPoint" type="tUInt8">
+   <element name="AIP_Early" value="0" />
+   <element name="AIP_Late" value="1" />
+  </enum>
+  <enum name="tFEP_Driver_GearSelection" type="tUInt8">
+   <element name="GS_P" value="0" />
+   <element name="GS_D" value="1" />
+   <element name="GS_R" value="2" />
+   <element name="GS_N" value="3" />
+   <element name="GS_1" value="4" />
+   <element name="GS_2" value="5" />
+   <element name="GS_3" value="6" />
+   <element name="GS_4" value="7" />
+   <element name="GS_5" value="8" />
+   <element name="GS_6" value="9" />
+   <element name="GS_7" value="10" />
+   <element name="GS_8" value="11" />
+  </enum>
+ </enums>
+ <structs>
+  <struct alignment="1" name="tFEP_Driver_DriverCtrl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f64SimTime" type="tFloat64" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="ui32VehicleId" type="tUInt32" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="12" name="eGear" type="tFEP_Driver_GearSelection" />
+   <element alignment="1" arraysize="3" byteorder="LE" bytepos="13" name="ui8Spare0" type="tUInt8" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="sLongitudinal" type="tFEP_Driver_LongitudinalControl" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="40" name="sLateral" type="tFEP_Driver_LateralControl" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="56" name="sLightControl" type="tFEP_Driver_LightControl" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="72" name="sWiperControl" type="tFEP_Driver_WiperControl" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="80" name="sAccControl" type="tFEP_Driver_AccControl" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="88" name="sAalaControl" type="tFEP_Driver_AalaControl" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="96" name="sAdditionalControl" type="tFEP_Driver_AdditionalControl" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="104" name="ui32ValidityMask" type="tUInt32" default="23"/>
+   <element alignment="1" arraysize="4" byteorder="LE" bytepos="108" name="ui8Spare1" type="tUInt8" default="23"/>
+  </struct>
+  <struct alignment="1" name="tFEP_Driver_LongitudinalControl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f32ThrottlePedal" type="tFloat32" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="f32BrakePedal" type="tFloat32" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="f32ClutchPedal" type="tFloat32" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="12" name="f32AccelTarget" type="tFloat32" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="f32SpeedTarget" type="tFloat32" default="23"/>
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="20" name="ui32ValidityMask" type="tUInt32" default="23"/>
+  </struct>
+  <struct alignment="1" name="tFEP_Driver_LateralControl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f32SteeringWheel" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="f32SteeringTarget" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="f32SteeringTorque" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="12" name="ui32ValidityMask" type="tUInt32" />
+  </struct>
+  <struct alignment="1" name="tFEP_Driver_LightControl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="eLightState" type="tFEP_Driver_LightState" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="1" name="bIndicatorLeft" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="2" name="bIndicatorRight" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="3" name="bFlashLight" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="bFogFront" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="5" name="bFogRear" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="6" name="bEmergency" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="7" name="ui8Spare0" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="ui32ValidityMask" type="tUInt32" />
+   <element alignment="1" arraysize="4" byteorder="LE" bytepos="12" name="ui8Spare1" type="tUInt8" />
+  </struct>
+  <struct alignment="1" name="tFEP_Driver_WiperControl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="eFrontState" type="tFEP_Driver_WiperState" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="1" name="eRearState" type="tFEP_Driver_WiperState" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="2" name="bWashFront" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="3" name="bWashRear" type="tBool" />
+   <element alignment="1" arraysize="4" byteorder="LE" bytepos="4" name="ui8Spare" type="tUInt8" />
+  </struct>
+  <struct alignment="1" name="tFEP_Driver_AccControl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="bActive" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="1" name="ui8GapSelected" type="tUInt8" />
+   <element alignment="1" arraysize="2" byteorder="LE" bytepos="2" name="ui8Spare" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="f32SpeedTarget" type="tFloat32" />
+  </struct>
+  <struct alignment="1" name="tFEP_Driver_AalaControl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="bActive" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="BE" bytepos="1" name="eIntervention" type="tFEP_Driver_AalaInterventionPoint" />
+   <element alignment="1" arraysize="6" byteorder="LE" bytepos="2" name="ui8Spare" type="tUInt8" />
+  </struct>
+  <struct alignment="1" name="tFEP_Driver_AdditionalControl" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="bParkingBrake" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="1" name="bHorn" type="tBool" />
+   <element alignment="1" arraysize="2" byteorder="LE" bytepos="2" name="ui8Spare" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="ui32ValidityMask" type="tUInt32" />
+  </struct>
+  <struct alignment="1" name="tDynStruct" version="1">
+     <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui32SomeData" type="tUInt32" />
+     <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="ui32DynArraySize" type="tUInt32" />
+     <element alignment="1" arraysize="ui32DynArraySize" byteorder="LE" bytepos="8" name="f64DynamicArray" type="tFloat64" />
+ </struct>
+ </structs>
+ <streams />
+</adtf:ddl>

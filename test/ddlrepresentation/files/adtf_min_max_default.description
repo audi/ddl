@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+	<header>
+		<language_version>3.00</language_version>
+		<author>AUDI Electronics Venture GmbH</author>
+		<date_creation>20130701</date_creation>
+		<date_change />
+		<description>ADTF Description File for test purposes</description>
+	</header>
+	<units>
+		<baseunit description="this is the no unit class" name="nou" symbol="" />
+	</units>
+	<datatypes>
+		<datatype description="predefined ADTF tBool datatype"   size="8"   name="tBool"  min="0" max="1" />
+		<datatype description="predefined ADTF tChar datatype"   size="8"   name="tChar" />
+		<datatype description="predefined ADTF tUInt8 datatype"  size="8"   name="tUInt8" />
+		<datatype description="predefined ADTF tInt8 datatype"   size="8"   name="tInt8" />
+		<datatype description="predefined ADTF tUInt16 datatype" size="16"  name="tUInt16" />
+		<datatype description="predefined ADTF tInt16 datatype"  size="16"  name="tInt16" />
+		<datatype description="predefined ADTF tUInt32 datatype" size="32"  name="tUInt32" min="0" max="10"/>
+		<datatype description="predefined ADTF tInt32 datatype"  size="32"  name="tInt32" />
+		<datatype description="predefined ADTF tUInt64 datatype" size="64"  name="tUInt64" />
+		<datatype description="predefined ADTF tInt64 datatype"  size="64"  name="tInt64" />
+		<datatype description="predefined ADTF tFloat32 datatype" size="32" name="tFloat32" />
+		<datatype description="predefined ADTF tFloat64 datatype" size="64" name="tFloat64" />
+	</datatypes>
+    <enums/>
+	<structs>
+		<struct alignment="1" name="tMinMaxDefaultStruct" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui16Value" type="tUInt16" min="2" max="255" default="3" />
+		</struct>
+        
+		<struct alignment="1" name="SomeStructWithBool" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui2Bool" type="tBool" min="0" max="1" default="tTrue"/>
+		</struct>
+        
+		<struct alignment="1" name="SomeStructU16WithBoolLimits" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui16Value1" type="tUInt16" min="tFalse" max="tTrue" default="tTrue"/>
+		</struct>
+        
+		<struct alignment="1" name="SomeStructBoolWithU16Limits" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui2Bool1" type="tBool" min="2" max="34" default="tTrue"/>
+		</struct>
+        
+		<struct alignment="1" name="SomeStructWithBoolWithoutMinMax" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui2Bool2" type="tBool" default="5" />
+		</struct>
+        
+        <struct alignment="1" name="tMinMaxDerived" version="1">
+            <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui32Derived" type="tUInt32" default="15" />
+        </struct>
+        
+        <struct alignment="1" name="tOutOfBounds" version="1">
+            <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="i16TooLow" type="tInt16" min="-5" max="5" default="-10" />
+        </struct>
+		
+	</structs>
+	<streams/>
+</adtf:ddl>

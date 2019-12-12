@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="unqualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="adtf"
+           xmlns:adtf="adtf">
+    
+    <xs:element name="ddl" type="adtf:ddl"></xs:element>
+    
+    <xs:complexType name="ddl">
+        <xs:sequence>
+            <xs:element name="header" type="adtf:header" />
+            <xs:element name="units" type="adtf:units" />
+            <xs:element name="datatypes" type="adtf:datatypes" />
+            <xs:element name="enums" type="adtf:enums" />
+            <xs:element name="structs" type="adtf:structs" />
+            <xs:element name="streams" type="adtf:streams" />
+            <xs:any namespace="##other" processContents="skip" 
+                 minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+	</xs:complexType>
+
+    <!-- currently not used, we need to improve the pattern if we want-->
+    <xs:simpleType name="date">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{2}(\.|-)\d{2}(\.|-)\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>     
+    
+    <xs:simpleType name="string">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="([a-zA-Z0-9\.\-_\+ ])+"/>
+        </xs:restriction>
+    </xs:simpleType>   
+    
+    <xs:simpleType name="string_or_empty">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="([a-zA-Z0-9\.\-_\+])*"/>
+        </xs:restriction>
+    </xs:simpleType>   
+    
+    <xs:simpleType name="language_version">
+        <xs:restriction base="xs:decimal">
+          <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType> 
+        
+    <xs:complexType name="header">
+        <xs:sequence>
+            <xs:element name="language_version" type="adtf:language_version" />
+            <xs:element name="author" type="adtf:string" />
+            <xs:element name="date_creation" type="xs:string" />
+            <xs:element name="date_change" type="xs:string" />
+            <xs:element name="description" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="ext_declaration" type="adtf:ext_declaration"/>
+            <xs:any namespace="##other" processContents="skip" 
+                 minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ext_declaration">
+        <xs:attribute name="key" type="adtf:string" use="required" />
+        <xs:attribute name="value" type="xs:string" use="required" />
+    </xs:complexType>
+    
+    <xs:complexType name="units">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="baseunit" type="adtf:baseunit"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="prefixes" type="adtf:prefixes"/>  
+            <xs:any namespace="##other" processContents="skip" 
+                 minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="baseunit">
+        <xs:attribute name="description" type="xs:string" use="required" />
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="symbol" type="adtf:string_or_empty" use="required" />
+    </xs:complexType>
+    
+    <xs:complexType name="prefixes">
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="power" type="xs:integer" use="required" />
+        <xs:attribute name="symbol" type="adtf:string_or_empty" use="required" />
+    </xs:complexType>
+    
+    <xs:complexType name="datatypes">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="datatype" type="adtf:datatype"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="datatype">
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="size" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="description" type="xs:string" />
+        <xs:attribute name="arraysize" type="xs:unsignedInt" />
+        <xs:attribute name="unit" type="adtf:string" />
+        <xs:attribute name="max" type="adtf:string" />
+        <xs:attribute name="min" type="adtf:string" />
+    </xs:complexType>
+    
+    <xs:complexType name="enums">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="enum" type="adtf:enum"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="enum">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="element" type="adtf:enum_element"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="type" type="adtf:string" use="required" />
+    </xs:complexType>
+    
+    <xs:complexType name="enum_element">
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="value" type="xs:string" use="required" />
+    </xs:complexType>
+    
+    <xs:complexType name="structs">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="struct" type="adtf:struct"/>
+        </xs:sequence>
+    </xs:complexType>
+        
+    <xs:simpleType name="alignment">
+      <xs:restriction base="xs:unsignedInt">
+        <xs:enumeration value="0"/>
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="4"/>
+        <xs:enumeration value="8"/>
+        <xs:enumeration value="16"/>
+        <xs:enumeration value="32"/>
+        <xs:enumeration value="64"/>
+      </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="struct">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="element" type="adtf:element"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="version" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="comment" type="xs:string" />
+        <xs:attribute name="alignment" type="adtf:alignment" />
+    </xs:complexType>
+    
+    <xs:simpleType name="byteorder">
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="LE"/>
+        <xs:enumeration value="BE"/>
+        <xs:enumeration value="Motorola"/>
+        <xs:enumeration value="Intel"/>
+      </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="element">
+        <xs:attribute name="type" type="adtf:string" use="required" />
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="bytepos" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="bitpos" type="xs:unsignedInt" />
+        <xs:attribute name="numbits" type="xs:unsignedInt" />
+        <xs:attribute name="description" type="adtf:string" />
+        <xs:attribute name="unit" type="adtf:string" />
+        <xs:attribute name="byteorder" type="adtf:byteorder" />
+        <xs:attribute name="alignment" type="adtf:alignment" />
+        <xs:attribute name="comment" type="xs:string" />
+        <xs:attribute name="arraysize" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="value" type="xs:string" />
+        <xs:attribute name="min" type="adtf:string" />
+        <xs:attribute name="max" type="adtf:string" />
+        <xs:attribute name="default" type="adtf:string" />
+        <xs:attribute name="scale" type="adtf:string" />
+        <xs:attribute name="offset" type="adtf:string" />
+    </xs:complexType>
+    
+    <xs:complexType name="streams">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="stream" type="adtf:stream"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="stream">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="struct" type="adtf:stream_struct"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="adtf:string" use="required" />
+        <xs:attribute name="type" type="adtf:string" use="required" />
+        <xs:attribute name="description" type="adtf:string" />
+    </xs:complexType>
+    
+    <xs:complexType name="stream_struct">
+        <xs:attribute name="bytepos" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="name" type="adtf:string" />
+        <xs:attribute name="type" type="adtf:string" use="required" />
+    </xs:complexType>
+</xs:schema>

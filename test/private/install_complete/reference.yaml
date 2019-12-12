@@ -1,0 +1,145 @@
+common:
+    files:
+        - MPL2.0.txt
+        - README.md
+        - cmake/ddl-config-version.cmake
+        - cmake/ddl-config.cmake
+        - cmake/ddl4.1_replacements.txt
+        - cmake/migrate_to_ddl_4_1.cmake
+        - cmake/migrate_to_ddl_4_1.sh.in
+        - doc/changelog.md
+        - doc/ddl3.xsd
+        - doc/ddl4.xsd
+        - doc/input/codec.md
+        - doc/input/ddl_generators.md
+        - doc/input/ddl_specification.md
+        - doc/input/mapping_specification.md
+        - doc/input/migration_4_1.md
+        - doc/input/mpl.md
+        - doc/input/oo-ddl.md
+        - doc/input/used_licenses.md
+        - doc/license/MPL2.0.txt
+        - doc/license/mpl.md
+        - doc/license/used_licenses.md
+        - doc/license/used_licenses/list_used_licenses.md
+        - doc/license/used_licenses/a_util/MPL2.0.txt
+        - doc/license/used_licenses/a_util/licenses.txt
+        - doc/license/used_licenses/a_util/used_oss.md
+        - doc/mapping_configuration.xsd
+        - include/codec/access_element.h
+        - include/codec/bitserializer.h
+        - include/codec/codec.h
+        - include/codec/codec_factory.h
+        - include/codec/pkg_codec.h
+        - include/codec/static_codec.h
+        - include/codec/struct_element.h
+        - include/ddl.h
+        - include/ddlrepresentation/ddl_common.h
+        - include/ddlrepresentation/ddl_error.h
+        - include/ddlrepresentation/ddl_intf.h
+        - include/ddlrepresentation/ddl_type.h
+        - include/ddlrepresentation/ddlalignment.h
+        - include/ddlrepresentation/ddlbaseunit.h
+        - include/ddlrepresentation/ddlbyteorder.h
+        - include/ddlrepresentation/ddlcloner.h
+        - include/ddlrepresentation/ddlcompare.h
+        - include/ddlrepresentation/ddlcomplex.h
+        - include/ddlrepresentation/ddlcontainer.h
+        - include/ddlrepresentation/ddldatatype.h
+        - include/ddlrepresentation/ddldatatype_intf.h
+        - include/ddlrepresentation/ddldescription.h
+        - include/ddlrepresentation/ddlelement.h
+        - include/ddlrepresentation/ddlenum.h
+        - include/ddlrepresentation/ddlextdeclaration.h
+        - include/ddlrepresentation/ddlfactorymethod_intf.h
+        - include/ddlrepresentation/ddlheader.h
+        - include/ddlrepresentation/ddlimporter.h
+        - include/ddlrepresentation/ddlinspector.h
+        - include/ddlrepresentation/ddlprefix.h
+        - include/ddlrepresentation/ddlprinter.h
+        - include/ddlrepresentation/ddlproperty.h
+        - include/ddlrepresentation/ddlrefunit.h
+        - include/ddlrepresentation/ddlrepair.h
+        - include/ddlrepresentation/ddlresolver.h
+        - include/ddlrepresentation/ddlserializable_intf.h
+        - include/ddlrepresentation/ddlstream.h
+        - include/ddlrepresentation/ddlstreammetatype.h
+        - include/ddlrepresentation/ddlstreamstruct.h
+        - include/ddlrepresentation/ddlunit.h
+        - include/ddlrepresentation/ddlunit_intf.h
+        - include/ddlrepresentation/ddlversion.h
+        - include/ddlrepresentation/ddlvisitor_intf.h
+        - include/ddlrepresentation/pkg_ddlrepresentation.h
+        - include/legacy_error_macros.h
+        - include/mapping/configuration/map_assignment.h
+        - include/mapping/configuration/map_configuration.h
+        - include/mapping/configuration/map_header.h
+        - include/mapping/configuration/map_source.h
+        - include/mapping/configuration/map_target.h
+        - include/mapping/configuration/map_transformation.h
+        - include/mapping/configuration/map_trigger.h
+        - include/mapping/ddl_helper.h
+        - include/mapping/engine/data_trigger.h
+        - include/mapping/engine/element.h
+        - include/mapping/engine/mapping_engine.h
+        - include/mapping/engine/mapping_environment_intf.h
+        - include/mapping/engine/periodic_trigger.h
+        - include/mapping/engine/signal_trigger.h
+        - include/mapping/engine/source.h
+        - include/mapping/engine/target.h
+        - include/mapping/engine/trigger.h
+        - include/mapping/pkg_mapping.h
+        - include/serialization/pkg_serialization.h
+        - include/serialization/serialization.h
+
+documentation:
+    conditions:
+        doc_x86:
+            arch: x86
+        doc_x86_64:
+            arch: x86_64
+    files:
+        - doc/ddl.html
+        - doc/html/index.html
+        - doc/html/*
+        
+
+linux_debug:
+    conditions:
+        lagd:
+            os: Linux
+            build_type: Debug
+    files:
+        - bin/debug/ddl2header
+        - bin/debug/header2ddl
+        - lib/libddld.a
+
+linux_release:
+    conditions:
+        lagd:
+            os: Linux
+            build_type: Release
+    files:
+        - bin/ddl2header
+        - bin/header2ddl
+        - lib/libddl.a
+
+windows_debug:
+    conditions:
+        lagd:
+            os: Windows
+            build_type: Debug
+    files:
+        - bin/debug/ddl2header.exe
+        - bin/debug/header2ddl.exe
+        - lib/ddld.lib
+
+windows_release:
+    conditions:
+        lagd:
+            os: Windows
+            build_type: Release
+    files:
+        - bin/ddl2header.exe
+        - bin/header2ddl.exe
+        - lib/ddl.lib

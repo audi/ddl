@@ -1,0 +1,53 @@
+set(MAPPING_DIR mapping)
+
+set(MAPPING_CONFIGURATION_H
+    ${MAPPING_DIR}/configuration/map_assignment.h
+    ${MAPPING_DIR}/configuration/map_configuration.h
+    ${MAPPING_DIR}/configuration/map_header.h
+    ${MAPPING_DIR}/configuration/map_source.h
+    ${MAPPING_DIR}/configuration/map_target.h
+    ${MAPPING_DIR}/configuration/map_transformation.h
+    ${MAPPING_DIR}/configuration/map_trigger.h
+)
+
+set(MAPPING_ENGINE_H
+    ${MAPPING_DIR}/engine/data_trigger.h
+    ${MAPPING_DIR}/engine/element.h
+    ${MAPPING_DIR}/engine/mapping_engine.h
+    ${MAPPING_DIR}/engine/periodic_trigger.h
+    ${MAPPING_DIR}/engine/signal_trigger.h
+    ${MAPPING_DIR}/engine/source.h
+    ${MAPPING_DIR}/engine/target.h
+    ${MAPPING_DIR}/engine/trigger.h
+    ${MAPPING_DIR}/engine/mapping_environment_intf.h
+)
+
+
+set(MAPPING_H
+    ${MAPPING_DIR}/pkg_mapping.h
+    ${MAPPING_DIR}/ddl_helper.h
+)
+
+set(MAPPING_CPP
+    ${MAPPING_DIR}/ddl_helper.cpp
+    ${MAPPING_DIR}/configuration/map_assignment.cpp
+    ${MAPPING_DIR}/configuration/map_configuration.cpp
+    ${MAPPING_DIR}/configuration/map_header.cpp
+    ${MAPPING_DIR}/configuration/map_source.cpp
+    ${MAPPING_DIR}/configuration/map_target.cpp
+    ${MAPPING_DIR}/configuration/map_transformation.cpp
+    ${MAPPING_DIR}/configuration/map_trigger.cpp
+    ${MAPPING_DIR}/engine/data_trigger.cpp
+    ${MAPPING_DIR}/engine/element.cpp
+    ${MAPPING_DIR}/engine/mapping_engine.cpp
+    ${MAPPING_DIR}/engine/periodic_trigger.cpp
+    ${MAPPING_DIR}/engine/signal_trigger.cpp
+    ${MAPPING_DIR}/engine/source.cpp
+    ${MAPPING_DIR}/engine/target.cpp
+    ${MAPPING_DIR}/engine/trigger.cpp
+)
+
+set(MAPPING_CONFIGURATION_INSTALL ${MAPPING_CONFIGURATION_H})
+set(MAPPING_ENGINE_INSTALL ${MAPPING_ENGINE_H})
+set(MAPPING_INSTALL ${MAPPING_H})
+source_group(${MAPPING_DIR} FILES ${MAPPING_CONFIGURATION_H} ${MAPPING_ENGINE_H} ${MAPPING_H} ${MAPPING_CPP})

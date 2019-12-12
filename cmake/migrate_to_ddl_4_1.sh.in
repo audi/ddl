@@ -1,0 +1,19 @@
+#!/bin/bash
+
+while IFS=';' read -ra line || [[ -n "$line" ]]; do
+    find @REPLACEMENT_DIR@ -type f -readable -writable -exec sed -i "s/\b${line[0]}\b/${line[1]}/g" {} \;
+done < @REPLACEMENTS_FILE@
+
+i="0"
+CWD="$(pwd)"
+cd "@CMAKE_CURRENT_SOURCE_DIR@"
+chmod +x @TIDY_SCRIPT@
+while [ $i -lt 50 ]; do
+    @TIDY_SCRIPT@ 2>&1 | grep 'clang-tidy applied .* suggested fixes'
+    if [ $? != 0 ]; then
+       break
+    fi
+    i=$[$i+1]
+done
+@TIDY_SCRIPT@
+cd "$CWD"

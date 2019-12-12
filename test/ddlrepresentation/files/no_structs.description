@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+	<header>
+		<language_version>1.02</language_version>
+		<author>AUDI Electronics Venture GmbH</author>
+		<date_creation>20120316</date_creation>
+		<date_change />
+		<description>ADTF Common Description File</description>
+	</header>
+	<units>
+		<baseunit description="this is the no unit class" name="nou" symbol="" />
+	</units>
+	<datatypes>
+		<datatype description="predefined ADTF tBool datatype"   size="8"   name="tBool" />
+		<datatype description="predefined ADTF tChar datatype"   size="8"   name="tChar" />
+		<datatype description="predefined ADTF tUInt8 datatype"  size="8"   name="tUInt8" />
+		<datatype description="predefined ADTF tInt8 datatype"   size="8"   name="tInt8" />
+		<datatype description="predefined ADTF tUInt16 datatype" size="16"  name="tUInt16" />
+		<datatype description="predefined ADTF tInt16 datatype"  size="16"  name="tInt16" />
+		<datatype description="predefined ADTF tUInt32 datatype" size="32"  name="tUInt32" />
+		<datatype description="predefined ADTF tInt32 datatype"  size="32"  name="tInt32" />
+		<datatype description="predefined ADTF tUInt64 datatype" size="64"  name="tUInt64" />
+		<datatype description="predefined ADTF tInt64 datatype"  size="64"  name="tInt64" />
+		<datatype description="predefined ADTF tFloat32 datatype" size="32" name="tFloat32" />
+		<datatype description="predefined ADTF tFloat64 datatype" size="64" name="tFloat64" />
+	</datatypes>
+	<streams/>
+</adtf:ddl>

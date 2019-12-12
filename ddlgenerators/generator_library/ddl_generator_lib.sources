@@ -1,0 +1,45 @@
+
+set(HEADER_PRESENTATION_DIRECTORY_NAME headerrepresentation)
+set(HEADER_PRESENTATION_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/${HEADER_PRESENTATION_DIRECTORY_NAME})
+set(DDL_GENERATOR_LIB_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR})
+
+set(HEADER_PRESENTATION_H ${HEADER_PRESENTATION_DIRECTORY}/ddl_to_header_converter.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_basic_type.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_constant.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_enum.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_header.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_importer.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_printer.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_struct.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_struct_element.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_to_ddl_converter.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_type.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_typedef.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_visitor_intf.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_factorymethod_intf.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/header_base_intf.h
+                                ${HEADER_PRESENTATION_DIRECTORY}/parserhelper.h)
+                                
+set(HEADER_PRESENTATION_CPP 
+               ${HEADER_PRESENTATION_DIRECTORY}/ddl_to_header_converter.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_basic_type.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_constant.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_enum.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_header.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_importer.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_printer.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_struct.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_struct_element.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_to_ddl_converter.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_type.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/header_typedef.cpp
+               ${HEADER_PRESENTATION_DIRECTORY}/parserhelper.cpp)
+
+set(DDL_GENERATOR_COMMON
+                ${CMAKE_CURRENT_LIST_DIR}/ddl_manager.h
+                ${CMAKE_CURRENT_LIST_DIR}/ddl_manager.cpp
+                ${CMAKE_CURRENT_LIST_DIR}/ddl_generator_core.h
+                ${CMAKE_CURRENT_LIST_DIR}/ddl_generator_core.cpp
+                ${CMAKE_CURRENT_LIST_DIR}/commandline.h
+                ${CMAKE_CURRENT_LIST_DIR}/commandline.cpp)
+                

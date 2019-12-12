@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+	<header>
+		<language_version>1.0+</language_version>
+		<author>AUDI Electronics Venture GmbH</author>
+		<date_creation>07.04.2011</date_creation>
+		<date_change>07.04.2011</date_change>
+		<description>ADTF Common Description File</description>
+	</header>
+	<units />
+	<datatypes>
+		<datatype description="predefined ADTF tUInt32 datatype" name="tUInt32" size="32" />
+		<datatype description="predefined ADTF tUInt8 datatype" name="tUInt8" size="8" />
+	</datatypes>
+	<structs>
+		<struct alignment="1" name="adtf.core.media_type" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="mediatype" type="tMediaTypeInfo" />
+		</struct>
+		<struct alignment="1" name="tMediaTypeInfo" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui32MajorType" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="ui32SubType" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="ui32Flags" type="tUInt32" />
+		</struct>
+		<struct alignment="1" name="tCanMessageExt" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui32Id" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="ui8Channel" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="5" name="ui8Length" type="tUInt8" />
+			<element alignment="1" arraysize="8" byteorder="LE" bytepos="6" name="pui8Data" type="tUInt8" />
+		</struct>
+	</structs>
+	<streams>
+		<stream description="extended can" name="extended_can_stream" type="adtf.core.media_type">
+			<struct bytepos="0" name="tCanMessageExt" type="tCanMessageExt" />
+		</stream>
+	</streams>
+</adtf:ddl>

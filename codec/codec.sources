@@ -1,0 +1,29 @@
+set(CODEC_DIR codec)
+
+set(CODEC_H_PUBLIC
+    ${CODEC_DIR}/pkg_codec.h
+    ${CODEC_DIR}/struct_element.h
+    ${CODEC_DIR}/access_element.h
+    ${CODEC_DIR}/static_codec.h
+    ${CODEC_DIR}/codec.h
+    ${CODEC_DIR}/codec_factory.h
+    ${CODEC_DIR}/bitserializer.h
+)
+set(CODEC_H
+    ${CODEC_H_PUBLIC}
+    ${CODEC_DIR}/struct_layout.h
+    ${CODEC_DIR}/element_accessor.h
+)
+
+set(CODEC_CPP
+    ${CODEC_DIR}/struct_layout.cpp
+    ${CODEC_DIR}/element_accessor.cpp
+    ${CODEC_DIR}/static_codec.cpp
+    ${CODEC_DIR}/codec.cpp
+    ${CODEC_DIR}/codec_factory.cpp
+    ${CODEC_DIR}/bitserializer.cpp
+)
+
+set(CODEC_INSTALL ${CODEC_H_PUBLIC})
+source_group(${CODEC_DIR} FILES ${CODEC_H} ${CODEC_CPP})
+

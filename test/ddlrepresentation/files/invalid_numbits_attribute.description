@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+  <header>
+    <language_version>2.0</language_version>
+    <author>ANOAFR4</author>
+    <date_creation>05-14-2013</date_creation>
+    <date_change/>
+    <description>Invalid numbits attribute TestDescription</description>
+  </header>
+  <datatypes>
+    <datatype description="predefined ADTF tUInt8 datatype" name="tUInt8" size="8"/>
+    <datatype description="predefined ADTF tInt8 datatype" name="tInt8" size="8"/>
+    <datatype description="predefined ADTF tUInt16 datatype" name="tUInt16" size="16"/>
+    <datatype description="predefined ADTF tInt16 datatype" name="tInt16" size="16"/>
+    <datatype description="predefined ADTF tUInt32 datatype" name="tUInt32" size="32"/>
+    <datatype description="predefined ADTF tInt32 datatype" name="tInt32" size="32"/>
+    <datatype description="predefined ADTF tFloat32 datatype" name="tFloat32" size="32"/>
+  </datatypes>
+  <structs>
+    <struct alignment="1" name="ObjectFusiontAssociation" version="1">
+      <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="singleitem" type="tUInt32" />
+      <element alignment="1" arraysize="2" numbits="32" byteorder="LE" bytepos="4" name="arrayitem" type="tUInt32" />
+    </struct>
+  </structs>
+</adtf:ddl>

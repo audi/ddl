@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+	<header>
+		<language_version>1.02</language_version>
+		<author>AUDI Electronics Venture GmbH</author>
+		<date_creation>20100407</date_creation>
+		<date_change>20110301</date_change>
+		<description>ADTF Common Description File</description>
+	</header>
+	<units>
+		<baseunit description="this is the no unit class" name="nou" symbol="" />
+		<baseunit description="Smallest information unit" name="bit" symbol="b" />
+	</units>
+	<datatypes>
+		<datatype description="predefined ADTF tBool datatype" name="tBool" size="8" unit="bit"/>
+		<datatype description="predefined ADTF tChar datatype" name="tChar" size="8" />
+		<datatype description="predefined ADTF tFloat32 datatype" name="tFloat32" size="32" />
+		<datatype description="predefined ADTF tFloat64 datatype" name="tFloat64" size="64" />
+		<datatype description="predefined ADTF tInt16 datatype" name="tInt16" size="16" />
+		<datatype description="predefined ADTF tInt32 datatype" name="tInt32" size="32" />
+		<datatype description="predefined ADTF tInt64 datatype" name="tInt64" size="64" />
+		<datatype description="predefined ADTF tInt8 datatype" name="tInt8" size="8" />
+		<datatype description="predefined ADTF tUInt16 datatype" name="tUInt16" size="16" />
+		<datatype description="predefined ADTF tUInt32 datatype" name="tUInt32" size="32" />
+		<datatype description="predefined ADTF tUInt64 datatype" name="tUInt64" size="64" />
+		<datatype description="predefined ADTF tUInt8 datatype" name="tUInt8" size="8" />
+	</datatypes>
+	<structs>
+		<!-- TYPE DESCRIPTIONS-->
+		<struct alignment="1" name="tMediaTypeInfo" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui32MajorType" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="ui32SubType" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="ui32Flags" type="tUInt32" />
+		</struct>
+		<struct alignment="1" name="adtf.core.media_type" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="mediatype" type="tMediaTypeInfo" />
+		</struct>
+		
+		<struct alignment="1" name="tBitmapFormat" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="nWidth" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="nHeight" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="nBitsPerPixel" type="tInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="10" name="nPixelFormat" type="tInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="12" name="nBytesPerLine" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="nSize" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="20" name="nPaletteSize" type="tInt32" />
+		</struct>
+		
+		<struct name="tWaveFormat" alignment="1" version="1">
+        	<element type="tInt32"  name="nFormatType"    bytepos="0" arraysize="1"  byteorder="LE" alignment="1"/>
+        	<element type="tInt32"  name="nChannels"      bytepos="4" arraysize="1"  byteorder="LE" alignment="1"/>
+        	<element type="tInt32"  name="nSamplesPerSec" bytepos="8" arraysize="1"  byteorder="LE" alignment="1"/>
+        	<element type="tInt32"  name="nBitsPerSample" bytepos="12" arraysize="1" byteorder="LE" alignment="1"/>
+        	<element type="tInt32"  name="nNumSamples"    bytepos="16" arraysize="1" byteorder="LE" alignment="1"/>
+        	<element type="tInt32"  name="nSize"          bytepos="20" arraysize="1" byteorder="LE" alignment="1"/>
+        </struct>
+        
+		<struct name="adtf.type.video" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="sMediatype" type="tMediaTypeInfo" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="12" name="sBitmapFormat" type="tBitmapFormat" />
+		</struct>
+		
+		<struct name="adtf.type.audio" version="1">
+           <element type="tMediaTypeInfo"    name="sMediatype"    bytepos="0" arraysize="1" byteorder="LE" alignment="1"/>
+           <element type="tWaveFormat"       name="sWaveFormat"   bytepos="12" arraysize="1" byteorder="LE" alignment="1"/>
+        </struct>
+		
+		<!--SAMPLE CONTENT DESCRIPTIONS-->
+		
+		<struct alignment="1" type="tCanMessage2" name="tCanMessage2" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui16Id" type="tUInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="2" name="ui8Channel" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="3" name="ui8Length" type="tUInt8" />
+			<element alignment="1" arraysize="8" byteorder="LE" bytepos="4" name="pui8Data" type="tUInt8" />
+		</struct>
+		
+		<struct alignment="1" type="tCanMessageExt2" name="tCanMessageExt2" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ui32Id" type="tUInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="ui8Channel" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="5" name="ui8Length" type="tUInt8" />
+			<element alignment="1" arraysize="8" byteorder="LE" bytepos="6" name="pui8Data" type="tUInt8" />
+		</struct>
+	</structs>
+	<streams>
+		<stream description="can" name="can_stream2" type="adtf.core.media_type">
+			<struct bytepos="0" type="tCanMessage2" />
+		</stream>
+		<stream description="extended can" name="extended_can_stream2" type="adtf.core.media_type">
+			<struct bytepos="0" type="tCanMessageExt2" />
+		</stream>
+		<stream description="video stream" name="video_stream" type="adtf.type.video" />
+		<stream description="video stream" name="audio_stream" type="adtf.type.audio" />
+	</streams>
+</adtf:ddl>

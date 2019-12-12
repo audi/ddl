@@ -1,0 +1,45 @@
+if(ddl_FOUND)
+    return()
+endif()
+
+# Compute the installation prefix relative to this file.
+get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+if(_IMPORT_PREFIX STREQUAL "/")
+  set(_IMPORT_PREFIX "")
+endif()
+
+# Add imported library target
+add_library(ddl STATIC IMPORTED)
+
+if (WIN32)
+    set(_LIB_PREFIX "")
+    set(_LIB_ENDING "lib")
+else()
+    set(_LIB_PREFIX "lib")
+    set(_LIB_ENDING "a")
+endif()
+
+set_target_properties(ddl PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+    INTERFACE_LINK_LIBRARIES "a_util"
+    INTERFACE_COMPILE_FEATURES "cxx_std_11"
+    
+    IMPORTED_LOCATION_DEBUG "${_IMPORT_PREFIX}/lib/${_LIB_PREFIX}ddl@CMAKE_DEBUG_POSTFIX@.${_LIB_ENDING}"
+    IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/${_LIB_PREFIX}ddl@CMAKE_RELEASE_POSTFIX@.${_LIB_ENDING}"
+    IMPORTED_LOCATION_RELWITHDEBINFO "${_IMPORT_PREFIX}/lib/${_LIB_PREFIX}ddl@CMAKE_RELWITHDEBINFO_POSTFIX@.${_LIB_ENDING}"
+    IMPORTED_LOCATION_MINSIZEREL "${_IMPORT_PREFIX}/lib/${_LIB_PREFIX}ddl@CMAKE_MINSIZEREL_POSTFIX@.${_LIB_ENDING}"
+)
+
+set(ddl_INCLUDE_DIRS ${_IMPORT_PREFIX}/include)
+set(ddl_LIBRARY_DIRS ${_IMPORT_PREFIX}/lib)
+set(ddl_BINARY_DIRS ${_IMPORT_PREFIX}/bin)
+
+# Cleanup temporary variables.
+unset(_LIB_ENDING)
+unset(_IMPORT_PREFIX)
+
+
+include("${CMAKE_CURRENT_LIST_DIR}/migrate_to_ddl_4_1.cmake")
+
+set(ddl_FOUND true)

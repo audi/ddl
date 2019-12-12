@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+    <header>
+        <language_version>3.00</language_version>
+        <author></author>
+        <date_creation></date_creation>
+        <date_change></date_change>
+        <description></description>
+    </header>
+    <units>
+    </units>
+    <datatypes>
+        <datatype description="predefined ADTF tBool datatype" max="tTrue" min="tFalse" name="tBool" size="8" />
+        <datatype description="predefined ADTF tChar datatype" max="127" min="-128" name="tChar" size="8" />
+        <datatype description="predefined ADTF tUInt8 datatype" max="255" min="0" name="tUInt8" size="8" />
+        <datatype description="predefined ADTF tInt8 datatype" max="127" min="-128" name="tInt8" size="8" />
+        <datatype description="predefined ADTF tUInt16 datatype" max="65535" min="0" name="tUInt16" size="16" />
+        <datatype description="predefined ADTF tInt16 datatype" max="32767" min="-32768" name="tInt16" size="16" />
+        <datatype description="predefined ADTF tUInt32 datatype" max="4294967295" min="0" name="tUInt32" size="32" />
+        <datatype description="predefined ADTF tInt32 datatype" max="2147483647" min="-2147483648" name="tInt32" size="32" />
+        <datatype description="predefined ADTF tUInt64 datatype" max="18446744073709551615" min="0" name="tUInt64" size="64" />
+        <datatype description="predefined ADTF tInt64 datatype" max="9223372036854775807" min="-9223372036854775808" name="tInt64" size="64" />
+        <datatype description="predefined ADTF tFloat32 datatype" max="3.402823e+38" min="-3.402823e+38" name="tFloat32" size="32" />
+        <datatype description="predefined ADTF tFloat64 datatype" max="1.797693e+308" min="-1.797693e+308" name="tFloat64" size="64" />
+    </datatypes>
+    <enums>
+    </enums>
+    <structs>
+        <struct alignment="4" name="simple_struct3" version="0">
+            <element alignment="4" arraysize="1" byteorder="LE" bytepos="0" name="c" type="tUInt32" />
+        </struct>
+        <struct alignment="1" name="simple_struct1" version="0">
+            <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="a" type="tUInt8" />
+        </struct>
+        <struct alignment="2" name="simple_struct2" version="0">
+            <element alignment="2" arraysize="1" byteorder="LE" bytepos="0" name="b" type="tUInt16" />
+        </struct>
+    </structs>
+    <streams />
+</adtf:ddl>

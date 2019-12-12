@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+ <header>
+  <language_version>3.00</language_version>
+  <author>TCLAKEW</author>
+  <date_creation>11.03.2016</date_creation>
+  <date_change>11.03.2016</date_change>
+  <description>ADTF generated</description>
+ </header>
+ <units>
+  <baseunit description="Unit from Ascet" name="percent" symbol="%" />
+  <baseunit description="Unit from Ascet" name="-" symbol="-" />
+  <baseunit description="Fundamental unit for electric current" name="Ampere" symbol="A" />
+  <baseunit description="Fundamental unit for luminous intensity" name="Candela" symbol="cd" />
+  <baseunit description="Non-SI standard unit for angle" name="Degree" symbol="deg" />
+  <baseunit description="Fundamental unit for thermodynamic temperature" name="Kelvin" symbol="K" />
+  <baseunit description="Fundamental unit for mass" name="Kilogram" symbol="kg" />
+  <baseunit description="Fundamental unit for length" name="Metre" symbol="m" />
+  <baseunit description="Fundamental unit for amount of substance" name="Mole" symbol="mol" />
+  <baseunit description="Non-SI standard unit for angle" name="Radiant" symbol="rad" />
+  <baseunit description="Fundamental unit for time" name="Second" symbol="s" />
+  <baseunit description="No SI, but needed for own unit definitions" name="Unitless" symbol="" />
+  <baseunit description="Unit from Ascet" name="km/h" symbol="km/h" />
+  <baseunit description="Unit from Ascet" name="m" symbol="m" />
+  <baseunit description="Unit from Ascet" name="m/s" symbol="m/s" />
+  <baseunit description="Unit from Ascet" name="m/s2" symbol="m/s2" />
+  <baseunit description="No SI, but needed for no unit definitions" name="nou" symbol="" />
+  <baseunit description="Unit from Ascet" name="degrees" symbol="°" />
+  <prefixes name="atto" power="-18" symbol="a" />
+  <prefixes name="centi" power="-2" symbol="c" />
+  <prefixes name="deca" power="1" symbol="da" />
+  <prefixes name="deci" power="-1" symbol="d" />
+  <prefixes name="exa" power="18" symbol="E" />
+  <prefixes name="femto" power="-15" symbol="f" />
+  <prefixes name="giga" power="9" symbol="G" />
+  <prefixes name="hecto" power="2" symbol="h" />
+  <prefixes name="kilo" power="3" symbol="k" />
+  <prefixes name="mega" power="6" symbol="M" />
+  <prefixes name="micro" power="-6" symbol="u" />
+  <prefixes name="milli" power="-3" symbol="m" />
+  <prefixes name="nano" power="-9" symbol="n" />
+  <prefixes name="peta" power="15" symbol="P" />
+  <prefixes name="pico" power="-12" symbol="p" />
+  <prefixes name="tera" power="12" symbol="T" />
+  <prefixes name="yocto" power="-24" symbol="y" />
+  <prefixes name="yotta" power="24" symbol="Y" />
+  <prefixes name="zepto" power="-21" symbol="z" />
+  <prefixes name="zetta" power="21" symbol="Z" />
+ </units>
+ <datatypes>
+  <datatype description="predefined ADTF tBool datatype" max="tTrue" min="tFalse" name="tBool" size="8" />
+  <datatype description="predefined ADTF tChar datatype" max="127" min="-128" name="tChar" size="8" />
+  <datatype description="predefined ADTF tFloat32 datatype" max="3.402823e+38" min="-3.402823e+38" name="tFloat32" size="32" />
+  <datatype description="predefined ADTF tFloat64 datatype" max="1.797693e+308" min="-1.797693e+308" name="tFloat64" size="64" />
+  <datatype description="predefined ADTF tInt16 datatype" max="32767" min="-32768" name="tInt16" size="16" />
+  <datatype description="predefined ADTF tInt32 datatype" max="2147483647" min="-2147483648" name="tInt32" size="32" />
+  <datatype description="predefined ADTF tInt64 datatype" max="9223372036854775807" min="-9223372036854775808" name="tInt64" size="64" />
+  <datatype description="predefined ADTF tInt8 datatype" max="127" min="-128" name="tInt8" size="8" />
+  <datatype description="predefined ADTF tUInt16 datatype" max="65535" min="0" name="tUInt16" size="16" />
+  <datatype description="predefined ADTF tUInt32 datatype" max="4294967295" min="0" name="tUInt32" size="32" />
+  <datatype description="predefined ADTF tUInt64 datatype" max="18446744073709551615" min="0" name="tUInt64" size="64" />
+  <datatype description="predefined ADTF tUInt8 datatype" max="255" min="0" name="tUInt8" size="8" />
+ </datatypes>
+ <enums>
+  <enum name="tPixelFormat" type="tInt16">
+   <element name="PF_16BIT" value="20" />
+   <element name="PF_24BIT" value="40" />
+   <element name="PF_32BIT" value="50" />
+   <element name="PF_8BIT" value="10" />
+   <element name="PF_ABGR_4444" value="29" />
+   <element name="PF_ABGR_8888" value="52" />
+   <element name="PF_ARGB_8888" value="51" />
+   <element name="PF_BGRA_8888" value="54" />
+   <element name="PF_BGR_555" value="34" />
+   <element name="PF_BGR_565" value="35" />
+   <element name="PF_BGR_888" value="46" />
+   <element name="PF_CUSTOM" value="1000" />
+   <element name="PF_GREYSCALE_10" value="21" />
+   <element name="PF_GREYSCALE_12" value="22" />
+   <element name="PF_GREYSCALE_14" value="23" />
+   <element name="PF_GREYSCALE_16" value="24" />
+   <element name="PF_GREYSCALE_18" value="41" />
+   <element name="PF_GREYSCALE_20" value="42" />
+   <element name="PF_GREYSCALE_22" value="43" />
+   <element name="PF_GREYSCALE_24" value="44" />
+   <element name="PF_GREYSCALE_32" value="55" />
+   <element name="PF_GREYSCALE_8" value="11" />
+   <element name="PF_GREYSCALE_FLOAT32" value="56" />
+   <element name="PF_RGBA_4444" value="28" />
+   <element name="PF_RGBA_8888" value="53" />
+   <element name="PF_RGB_444" value="25" />
+   <element name="PF_RGB_555" value="26" />
+   <element name="PF_RGB_565" value="27" />
+   <element name="PF_RGB_8" value="12" />
+   <element name="PF_RGB_888" value="45" />
+   <element name="PF_RIII_10" value="30" />
+   <element name="PF_RIII_12" value="31" />
+   <element name="PF_RIII_14" value="32" />
+   <element name="PF_RIII_16" value="33" />
+   <element name="PF_UNKNOWN" value="0" />
+   <element name="PF_YUV420P_888" value="60" />
+  </enum>
+ </enums>
+ <structs>
+  <struct alignment="1" name="Float64Struct" version="0">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f64Value" type="tFloat64" />
+  </struct>
+  <struct alignment="1" name="Player_out" version="0">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="ACC_aFolCtl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="ACC_bBli_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="ACC_bFail_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="24" name="ACC_bNotAvl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="32" name="ACC_dstObj_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="40" name="ACC_vRelObj_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="48" name="AccP_r_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="56" name="Brk_r_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="64" name="Brk_st_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="72" name="CnvCl_stMod_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="80" name="CordFreWhlAx_stPhdFreWhl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="88" name="Veh_v_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="96" name="Disp_vVeh_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="104" name="DrvModSwt_noModReq_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="112" name="ESS_bIgOn_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="120" name="EStoLgCns_pwrIntlWorkAry_C_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="128" name="EStoLgSdl_stCalcEna_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="136" name="ElSys_bPwf_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="144" name="Eng_agPwrStg_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="152" name="Eng_bCluOp_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="160" name="Eng_bCodStrtStop_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="168" name="Eng_n_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="176" name="Eng_rAcePed_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="184" name="Eng_v_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="192" name="GearBx_stFreWhl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="200" name="GlbDa_tiDay_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="208" name="GlbDa_tiHour_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="216" name="GlbDa_tiMonth_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="224" name="GlbDa_tiYear_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="232" name="ImgPrc_bBli_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="240" name="ImgPrc_bFail_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="248" name="ImgPrc_bNotAvl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="256" name="ImgPrc_dstObj_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="264" name="ImgPrc_fac_tiObjCrash_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="272" name="ImgPrc_stObj_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="280" name="Mmi_bPredDrvAceped_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="288" name="Mmi_bPredDrvAcv_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="296" name="Mmi_bSail_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="304" name="PDCtl_noFid_bNeutFolCtl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="312" name="PDEnvObj_noFid_bNeutFolCtl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="320" name="PDEnvObj_noFid_stAccObj1_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="328" name="PDEnvObj_noFid_stImgObj1_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="336" name="PDMod_noFid_bFailUsrIfPed_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="344" name="PDMod_noFid_bFailUsrIfSys_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="352" name="PDMod_noFid_bIniUsrIfPed_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="360" name="PDMod_noFid_bIniUsrIfSail_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="368" name="PDMod_noFid_bIniUsrIfSys_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="376" name="PDMod_noFid_stComAcc_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="384" name="PDMod_noFid_stComReObj_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="392" name="PtTqLoss_tqWhlOverRun_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="400" name="Pt_nClu_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="408" name="Pt_nWhlAx1_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="416" name="Pt_r_tqWhlEng_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="424" name="Pt_tqWhl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="432" name="RearObjDet_bBli_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="440" name="RearObjDet_bFail_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="448" name="RearObjDet_bNotAvl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="456" name="RearObjDet_posnXObj03_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="464" name="RearObjDet_vRelObj03_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="472" name="StrtStopSwt_bSwtOut_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="480" name="Tra_noGear_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="488" name="TrfcSignDet_noClasLim_vAct_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="496" name="VLCAvl_stFailCanMsgSum_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="504" name="VLCAvl_stFailSigSum_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="512" name="VLCAvl_stPt_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="520" name="VLCAvl_stQlySigSum_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="528" name="VLCSt_bAcv_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="536" name="VLCTra_vOfsSailMin_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="544" name="VLCTra_vOfsSail_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="552" name="VLCTra_vSailMax_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="560" name="VLCTra_vSailMin_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="568" name="VLCVehA_aFilRstn_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="576" name="VLCVehA_aLgt_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="584" name="VLCVehA_aTrvAdp_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="592" name="VLCVehA_aTrv_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="600" name="VLCVehA_aVeh_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="608" name="VLCVehA_rdWhl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="616" name="VLCVehA_vVeh_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="624" name="VarCod_bApffPres_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="632" name="VarCod_bGearBxTypAt_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="640" name="VarCod_bLaneChgAsiPres_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="648" name="VarCod_bPredDrvPres_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="656" name="VarCod_stCrCtlTyp_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="664" name="VehFRstn_agRoadPreCtl_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="672" name="VehFRstn_bFailQly_aLgt_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="680" name="VehFRstn_bTrail_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="688" name="VehFRstn_facDrvDir_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="696" name="VehMEstim_mEstim_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="704" name="Veh_agRoad_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="712" name="Veh_bDirIdcLe_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="720" name="Veh_bDirIdcRi_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="728" name="Veh_bQly_agRoad_VW" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="736" name="Veh_stSig_rSlopRoadCan_VW" type="tFloat64" />
+   <element alignment="1" arraysize="14" byteorder="LE" bytepos="744" name="CordStrtStop_stStopPhd_VW" type="tFloat64" />
+  </struct>
+  <struct alignment="1" name="StructIn_Modulverbund_100ms" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" max="3.40282e+38" min="1.17549e-38" name="ACC_aFolCtl_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" max="255" min="0" name="ACC_bBli_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="5" max="255" min="0" name="ACC_bFail_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="6" max="255" min="0" name="ACC_bNotAvl_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="7" max="3.40282e+38" min="1.17549e-38" name="ACC_dstObj_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="11" max="3.40282e+38" min="1.17549e-38" name="ACC_vRelObj_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="15" max="4.29497e+09" min="0" name="Brk_st_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="19" max="255" min="0" name="Clu0St_bOp_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="20" max="4.29497e+09" min="0" name="CnvCl_stMod_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="24" max="4.29497e+09" min="0" name="CordFreWhlAx_stPhdFreWhl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="28" max="3.40282e+38" min="1.17549e-38" name="Disp_vVeh_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="32" max="4.29497e+09" min="0" name="DrvDemDrg_stDrvProg_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="36" max="3.40282e+38" min="1.17549e-38" name="DrvDemDrg_tqWhl_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="40" max="3.40282e+38" min="1.17549e-38" name="DrvDemDrg_tqWhlFbDrvAsi_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="44" max="4.29497e+09" min="0" name="DrvModSwt_noModReq_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="48" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav4Fail_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="52" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav5Fail_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="56" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav6Fail_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="60" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav6Mux0_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="64" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav6Mux1_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="68" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav6Mux2_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="72" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav6Mux3_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="76" max="4.29497e+09" min="0" name="EhrRcnSho_noFid_bNav6Mux4_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="80" max="3.40282e+38" min="1.17549e-38" name="Eng_agPwrStg_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="84" max="255" min="0" name="Eng_bCluOp_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="85" max="255" min="0" name="Eng_bCodStrtStop_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="86" max="255" min="0" name="Eng_bPuFuCutOff_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="87" max="255" min="0" name="Eng_bQly_bCluOp_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="88" max="255" min="0" name="Eng_bQly_pAmb_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="89" max="3.40282e+38" min="1.17549e-38" name="Eng_n_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="93" max="3.40282e+38" min="1.17549e-38" name="Eng_rAcePed_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="97" max="3.40282e+38" min="1.17549e-38" name="Eng_tEnv_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="101" max="3.40282e+38" min="1.17549e-38" name="Eng_v_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="105" max="255" min="0" name="ErrMem_bFidRdy_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="106" max="255" min="0" name="ESS_bIgOn_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="107" max="4.29497e+09" min="0" name="GearBx_stFreWhl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="111" max="3.40282e+38" min="1.17549e-38" name="GlbDa_pAmbUnFil_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="115" max="4.29497e+09" min="0" name="GlbDa_tiDay_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="119" max="4.29497e+09" min="0" name="GlbDa_tiHour_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="123" max="4.29497e+09" min="0" name="GlbDa_tiMonth_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="127" max="4.29497e+09" min="0" name="GlbDa_tiYear_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="131" max="255" min="0" name="ImgPrc_bBli_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="132" max="255" min="0" name="ImgPrc_bFail_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="133" max="255" min="0" name="ImgPrc_bNotAvl_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="134" max="3.40282e+38" min="1.17549e-38" name="ImgPrc_dstObj_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="138" max="3.40282e+38" min="1.17549e-38" name="ImgPrc_fac_tiObjCrash_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="142" max="3.40282e+38" min="1.17549e-38" name="ImgPrc_stObj_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="146" max="255" min="0" name="Mmi_bPredDrvAceped_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="147" max="255" min="0" name="Mmi_bPredDrvAcv_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="148" max="255" min="0" name="Mmi_bSail_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="149" max="3.40282e+38" min="1.17549e-38" name="Nav_agBrchGeoSeg_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="153" max="3.40282e+38" min="1.17549e-38" name="Nav_agDir_posnAbsSeg_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="157" max="3.40282e+38" min="1.17549e-38" name="Nav_agLati_posnAbsSeg_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="161" max="3.40282e+38" min="1.17549e-38" name="Nav_agLongi_posnAbsSeg_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="165" max="255" min="0" name="Nav_bBldUpAttrSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="166" max="255" min="0" name="Nav_bClr_posnVeh_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="167" max="255" min="0" name="Nav_bDatQlyHiGeoSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="168" max="255" min="0" name="Nav_bLatiNeg_posnAbsSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="169" max="255" min="0" name="Nav_bLeBrchGeoSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="170" max="255" min="0" name="Nav_bLhdAttrSys_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="171" max="255" min="0" name="Nav_bLongiNeg_posnAbsSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="172" max="255" min="0" name="Nav_bMostProbPthAttrSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="173" max="255" min="0" name="Nav_bNavAcvAttrSys_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="174" max="255" min="0" name="Nav_bNegCrvBegGeoSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="175" max="255" min="0" name="Nav_bNegCrvEndGeoSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="176" max="255" min="0" name="Nav_bSpdlAttrSys_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="177" max="255" min="0" name="Nav_bStghtPthAttrSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="178" max="255" min="0" name="Nav_bTraCmplAttrOfs12_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="179" max="255" min="0" name="Nav_bTraCmplAttrOfs345_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="180" max="255" min="0" name="Nav_bTraCmplAttrSlop12_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="181" max="255" min="0" name="Nav_bTraCmplAttrSlop3_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="182" max="255" min="0" name="Nav_bTraCmplAttrSpdl_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="183" max="255" min="0" name="Nav_bTraCmplGeoSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="184" max="255" min="0" name="Nav_bUpAttrSlop1_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="185" max="255" min="0" name="Nav_bUpAttrSlop2_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="186" max="255" min="0" name="Nav_bUpAttrSlop3_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="187" max="4.29497e+09" min="0" name="Nav_facCrvBegGeoSeg_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="191" max="3.40282e+38" min="1.17549e-38" name="Nav_facCrvEndGeoSeg_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="195" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrOfs1_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="199" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrOfs2_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="203" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrOfs3_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="207" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrOfs4_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="211" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrOfs5_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="215" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrSlop1_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="219" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrSlop2_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="223" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrSlop3_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="227" max="3.40282e+38" min="1.17549e-38" name="Nav_lOfsAttrSpdl_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="231" max="3.40282e+38" min="1.17549e-38" name="Nav_lResi_posnVeh_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="235" max="3.40282e+38" min="1.17549e-38" name="Nav_lSegGeoSeg_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="239" max="4.29497e+09" min="0" name="Nav_noClasAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="243" max="4.29497e+09" min="0" name="Nav_noDayBegAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="247" max="4.29497e+09" min="0" name="Nav_noDayEndAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="251" max="4.29497e+09" min="0" name="Nav_noGeoQlyAttrSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="255" max="4.29497e+09" min="0" name="Nav_noHourBegAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="259" max="4.29497e+09" min="0" name="Nav_noHourEndAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="263" max="4.29497e+09" min="0" name="Nav_noIdAttrOfs1_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="267" max="4.29497e+09" min="0" name="Nav_noIdAttrOfs2_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="271" max="4.29497e+09" min="0" name="Nav_noIdAttrOfs3_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="275" max="4.29497e+09" min="0" name="Nav_noIdAttrOfs4_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="279" max="4.29497e+09" min="0" name="Nav_noIdAttrOfs5_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="283" max="4.29497e+09" min="0" name="Nav_noLaneAttrSeg_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="287" max="4.29497e+09" min="0" name="Nav_noLaneAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="291" max="4.29497e+09" min="0" name="Nav_noLglAddOnAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="295" max="4.29497e+09" min="0" name="Nav_noLglClasAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="299" max="4.29497e+09" min="0" name="Nav_noLgtFail_posnVeh_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="303" max="4.29497e+09" min="0" name="Nav_noMapAgeAttrSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="307" max="4.29497e+09" min="0" name="Nav_noMapMtchQlyAttrSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="311" max="4.29497e+09" min="0" name="Nav_noNtnCodAttrSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="315" max="4.29497e+09" min="0" name="Nav_noRampCatAttrSeg_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="319" max="4.29497e+09" min="0" name="Nav_noRoadClasAttrSeg_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="323" max="4.29497e+09" min="0" name="Nav_noSegId_posnVeh_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="327" max="4.29497e+09" min="0" name="Nav_noSegIdAttrOfs12_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="331" max="4.29497e+09" min="0" name="Nav_noSegIdAttrOfs345_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="335" max="4.29497e+09" min="0" name="Nav_noSegIdAttrSlop12_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="339" max="4.29497e+09" min="0" name="Nav_noSegIdAttrSlop3_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="343" max="4.29497e+09" min="0" name="Nav_noSegIdAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="347" max="4.29497e+09" min="0" name="Nav_noSegIdAttrSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="351" max="4.29497e+09" min="0" name="Nav_noSegIdGeoSeg_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="355" max="4.29497e+09" min="0" name="Nav_noSegPrevIdGeoSeg_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="359" max="4.29497e+09" min="0" name="Nav_noStaCodAttrSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="363" max="4.29497e+09" min="0" name="Nav_noTrailClasAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="367" max="4.29497e+09" min="0" name="Nav_noTypAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="371" max="4.29497e+09" min="0" name="Nav_noValAttrOfs1_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="375" max="4.29497e+09" min="0" name="Nav_noValAttrOfs2_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="379" max="4.29497e+09" min="0" name="Nav_noValAttrOfs3_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="383" max="4.29497e+09" min="0" name="Nav_noValAttrOfs4_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="387" max="4.29497e+09" min="0" name="Nav_noValAttrOfs5_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="391" max="4.29497e+09" min="0" name="Nav_noWthrClasAttrSpdl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="395" max="3.40282e+38" min="1.17549e-38" name="Nav_rSlopAttrSlop1_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="399" max="3.40282e+38" min="1.17549e-38" name="Nav_rSlopAttrSlop2_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="403" max="3.40282e+38" min="1.17549e-38" name="Nav_rSlopAttrSlop3_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="407" max="4.29497e+09" min="0" name="Nav_stTrfcSignSrc_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="411" max="3.40282e+38" min="1.17549e-38" name="Nav_tiInh_posnVeh_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="415" max="4.29497e+09" min="0" name="PDCtl_noFid_bNeutFolCtl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="419" max="4.29497e+09" min="0" name="PDEnvObj_noFid_bNeutFolCtl_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="423" max="4.29497e+09" min="0" name="PDEnvObj_noFid_stAccObj1_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="427" max="4.29497e+09" min="0" name="PDEnvObj_noFid_stImgObj1_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="431" max="4.29497e+09" min="0" name="PDMod_noFid_bFailUsrIfPed_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="435" max="4.29497e+09" min="0" name="PDMod_noFid_bFailUsrIfSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="439" max="4.29497e+09" min="0" name="PDMod_noFid_bIniUsrIfPed_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="443" max="4.29497e+09" min="0" name="PDMod_noFid_bIniUsrIfSail_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="447" max="4.29497e+09" min="0" name="PDMod_noFid_bIniUsrIfSys_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="451" max="4.29497e+09" min="0" name="PDMod_noFid_stComAcc_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="455" max="4.29497e+09" min="0" name="PDMod_noFid_stComReObj_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="459" max="3.40282e+38" min="1.17549e-38" name="Pt_nClu_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="463" max="3.40282e+38" min="1.17549e-38" name="Pt_r_tqWhlEng_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="467" max="3.40282e+38" min="1.17549e-38" name="PtTqLoss_tqWhlOverRun_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="471" max="255" min="0" name="RearObjDet_bBli_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="472" max="255" min="0" name="RearObjDet_bFail_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="473" max="255" min="0" name="RearObjDet_bNotAvl_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="474" max="3.40282e+38" min="1.17549e-38" name="RearObjDet_posnXObj03_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="478" max="3.40282e+38" min="1.17549e-38" name="RearObjDet_vRelObj03_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="482" max="255" min="0" name="StrtStopSwt_bSwtOut_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="483" max="3.40282e+38" min="1.17549e-38" name="Tra_noGear_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="487" max="255" min="0" name="TrfcSignDet_bRoadWork_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="488" max="255" min="0" name="TrfcSignDet_bSrcImgPrc_vSpdlPrim_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="489" max="255" min="0" name="TrfcSignDet_bSrcImgPrc_vSpdlScnd_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="490" max="255" min="0" name="TrfcSignDet_bSrcImgPrc2_vSpdlPrim_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="491" max="255" min="0" name="TrfcSignDet_bSrcImgPrc2_vSpdlScnd_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="492" max="255" min="0" name="TrfcSignDet_bSrcLgl_vSpdlPrim_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="493" max="255" min="0" name="TrfcSignDet_bSrcLgl_vSpdlScnd_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="494" max="255" min="0" name="TrfcSignDet_bSrcMap_vSpdlPrim_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="495" max="255" min="0" name="TrfcSignDet_bSrcMap_vSpdlScnd_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="496" max="4.29497e+09" min="0" name="TrfcSignDet_noClasLim_vAct_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="500" max="4.29497e+09" min="0" name="TrfcSignDet_st_vSpdlPrim_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="504" max="4.29497e+09" min="0" name="TrfcSignDet_st_vSpdlScnd_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="508" max="4.29497e+09" min="0" name="TrfcSignDet_stSignAdd_vSpdlPrim_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="512" max="4.29497e+09" min="0" name="TrfcSignDet_stSignAdd_vSpdlScnd_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="516" max="255" min="0" name="VarCod_bApffPres_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="517" max="255" min="0" name="VarCod_bGearBxTypAt_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="518" max="255" min="0" name="VarCod_bLaneChgAsiPres_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="519" max="255" min="0" name="VarCod_bPredDrvPres_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="520" max="4.29497e+09" min="0" name="VarCod_stCrCtlTyp_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="524" max="3.40282e+38" min="1.17549e-38" name="Veh_agRoad_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="528" max="255" min="0" name="Veh_bDirIdcLe_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="529" max="255" min="0" name="Veh_bDirIdcRi_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="530" max="255" min="0" name="Veh_bQly_agRoad_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="531" max="4.29497e+09" min="0" name="Veh_stSig_rSlopRoadCan_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="535" max="3.40282e+38" min="1.17549e-38" name="Veh_v_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="539" max="3.40282e+38" min="1.17549e-38" name="VehFRstn_agRoadPreCtl_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="543" max="255" min="0" name="VehFRstn_bFailQly_aLgt_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="544" max="255" min="0" name="VehFRstn_bPtOp_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="545" max="255" min="0" name="VehFRstn_bTrail_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="546" max="3.40282e+38" min="1.17549e-38" name="VehFRstn_facDrvDir_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="550" max="255" min="0" name="VehMEstim_bQly_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="551" max="3.40282e+38" min="1.17549e-38" name="VehMEstim_mEstim_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="555" max="4.29497e+09" min="0" name="VLCAvl_stBrkIntv_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="559" max="4.29497e+09" min="0" name="VLCAvl_stFailCanMsgSum_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="563" max="4.29497e+09" min="0" name="VLCAvl_stFailSigSum_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="567" max="4.29497e+09" min="0" name="VLCAvl_stPt_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="571" max="4.29497e+09" min="0" name="VLCAvl_stQlySigSum_VW" type="tUInt32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="575" max="255" min="0" name="VLCSt_bAcv_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="576" max="3.40282e+38" min="1.17549e-38" name="VLCTra_vOfsSail_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="580" max="3.40282e+38" min="1.17549e-38" name="VLCTra_vOfsSailMin_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="584" max="3.40282e+38" min="1.17549e-38" name="VLCTra_vSailMax_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="588" max="3.40282e+38" min="1.17549e-38" name="VLCTra_vSailMin_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="592" max="3.40282e+38" min="1.17549e-38" name="VLCVehA_aFilRstn_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="596" max="3.40282e+38" min="1.17549e-38" name="VLCVehA_aLgt_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="600" max="3.40282e+38" min="1.17549e-38" name="VLCVehA_aTrv_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="604" max="3.40282e+38" min="1.17549e-38" name="VLCVehA_aVeh_VW" type="tFloat32" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="608" max="3.40282e+38" min="1.17549e-38" name="VLCVehA_rdWhl_VW" type="tFloat32" />
+   <element alignment="1" arraysize="14" byteorder="LE" bytepos="612" max="4.29497e+09" min="0" name="CordStrtStop_stStopPhd_VW" type="tUInt32" />
+  </struct>
+  <struct alignment="1" name="StructOut_Modulverbund_100ms" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" comment="latitude of segment origin in WGS84 (world geodetic system)" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_agLati_posnAbsSeg_VW" type="tFloat32" unit="degrees" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="4" comment="longitude of segment origin in WGS84 (world geodetic system)" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_agLongi_posnAbsSeg_VW" type="tFloat32" unit="degrees" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="8" comment="built up area at vehicle position" max="255" min="0" name="EhrRcnSho_bBldUpAct_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="9" comment="predicted built up area ahead" max="255" min="0" name="EhrRcnSho_bBldUpPred_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="10" comment="junction backwards" max="255" min="0" name="EhrRcnSho_bBrchBwd_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="11" comment="junction predictive" max="255" min="0" name="EhrRcnSho_bBrchPred_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="12" comment="sign of latitude is negative" max="255" min="0" name="EhrRcnSho_bLatiNeg_posnAbsSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="13" comment="driving direction at the vehicles position is left-hand traffic (false - right-hand traffic)" max="255" min="0" name="EhrRcnSho_bLhdAttrSys_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="14" comment="sign of longitude is negative" max="255" min="0" name="EhrRcnSho_bLongiNeg_posnAbsSeg_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="15" comment="traffic circuit backward" max="255" min="0" name="EhrRcnSho_bTrfcCirBwd_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="16" comment="traffic circuit predictive" max="255" min="0" name="EhrRcnSho_bTrfcCirPred_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="17" comment="the navigation is able to locate an obvious vehicle position" max="255" min="0" name="EhrRcnSho_bVld_posnVeh_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="18" comment="length of backward speed limitation class at the vehicle position" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_l_vSpdlBwd_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="22" comment="length of actual built up area at vehicle position" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lBldUpAct_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="26" comment="length of backward built up area at vehicle position" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lBldUpBwd_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="30" comment="length of predicted built up area ahead" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lBldUpPred_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="34" comment="distance to the junction backwards" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lBrchBwd_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="38" comment="distance to the predictive junction" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lBrchPred_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="42" comment="current length of speedlimit prediction on main path" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lCurPredSpdl_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="46" comment="length of actual ramp class at vehicle position" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lRampAct_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="50" comment="length of predictive ramp class" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lRampPred_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="54" comment="length of actual road class at vehicle position" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lRoadClasAct_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="58" comment="length of predictive road class" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lRoadClasPred_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="62" comment="distance to the traffic circuit backwards" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lTrfcCirBwd_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="66" comment="distance to the traffic circuit forward" max="3.40282e+38" min="1.17549e-38" name="EhrRcnSho_lTrfcCirPred_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="70" comment="actual speed limitation class at the vehicle position" max="4.29497e+09" min="0" name="EhrRcnSho_noClas_vSpdlAct_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="74" comment="predictive speed limitation class" max="4.29497e+09" min="0" name="EhrRcnSho_noClas_vSpdlPred_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="78" comment="second predictive speed limitation class" max="4.29497e+09" min="0" name="EhrRcnSho_noClas_vSpdlPred2_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="82" comment="third predictive speed limitation class" max="4.29497e+09" min="0" name="EhrRcnSho_noClas_vSpdlPred3_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="86" comment="country code of predicted segments" max="4.29497e+09" min="0" name="EhrRcnSho_noNtnCodAttrSys_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="90" comment="number of predictive ramp class" max="4.29497e+09" min="0" name="EhrRcnSho_noRampPred_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="94" comment="number of predictive road class" max="4.29497e+09" min="0" name="EhrRcnSho_noRoadClasPred_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="98" comment="Show coasting advice to driver" max="255" min="0" name="PDCtl_bCstdReq_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="99" comment="Freewheeling mode is requested" max="255" min="0" name="PDCtl_bSailReq_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="100" comment="Distance that the sailing trajectory is within the cruise control velocity band" max="3.40282e+38" min="1.17549e-38" name="PDCtl_dstPmdSailCrCtl_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="104" comment="Current length of coasting trajectories" max="3.40282e+38" min="1.17549e-38" name="PDCtl_lCur_vPred_VW" type="tFloat32" unit="m" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="108" comment="Request haptic coasting advice" max="255" min="0" name="PredDrv_bCstdReqAceped_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="109" comment="Displayed speed limit values have the unit miles per hour" max="255" min="0" name="PredDrv_bMile_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="110" comment="Bit for temporary display" max="255" min="0" name="PredDrv_bTmpDisp_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="111" comment="Progress bar for distance to displayed event" max="3.40282e+38" min="1.17549e-38" name="PredDrv_rPerc_dstEve_VW" type="tFloat32" unit="percent" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="115" comment="State of coasting advice display" max="4.29497e+09" min="0" name="PredDrv_stCstdReq_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="119" comment="State of coasting advice display for BAP interface" max="4.29497e+09" min="0" name="PredDrv_stCstdReq2_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="123" comment="Show numeric addition to coasting advices" max="4.29497e+09" min="0" name="PredDrv_stDispNumAdd_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="127" comment="State of driver action" max="4.29497e+09" min="0" name="PredDrv_stDrvResp_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="131" comment="Encoded value of the displayed speed limit event" max="4.29497e+09" min="0" name="PredDrv_stEveVal_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="135" comment="Encoded value of the displayed speed limit event" max="4.29497e+09" min="0" name="PredDrv_stEveVal2_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="139" comment="List of activated BAP functions" max="4.29497e+09" min="0" name="PredDrv_stFct_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="143" comment="Release info state for free-wheeling from PredDrv package" max="4.29497e+09" min="0" name="PredDrv_stRlsFreWhl_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="147" comment="Type of progress bar" max="4.29497e+09" min="0" name="PredDrv_stTyp_rPercEve_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="151" comment="Unit of numeric addition to coasting advice" max="4.29497e+09" min="0" name="PredDrv_stTyp_vNumAdd_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="155" comment="Validity of progress bar" max="4.29497e+09" min="0" name="PredDrv_stVld_rPercEve_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="159" comment="Value of the displayed speed limit event" max="4.29497e+09" min="0" name="PredDrv_vEveVal_VW" type="tUInt32" unit="km/h" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="163" comment="current relative velocity to front object" max="3.40282e+38" min="1.17549e-38" name="PDEnvObj_vRelFrntObjCur_VW" type="tFloat32" unit="m/s" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="167" comment="User interface of force feedback pedal is available" max="255" min="0" name="PredDrv_bAcepedAvl_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="168" comment="Driver has activated &quot;Predictive Efficiency Assist&quot; in car menu" max="255" min="0" name="PredDrv_bAcvUsrIf_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="169" comment="PredDrv system available" max="255" min="0" name="PredDrv_bSysAvl_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="170" comment="Changeablitity of user interface of force feedback pedal" max="4.29497e+09" min="0" name="PredDrv_stChgUsrIfAceped_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="174" comment="Failure state for instrument cluster" max="4.29497e+09" min="0" name="PredDrv_stFailDisp_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="178" comment="Failure state for MMI" max="4.29497e+09" min="0" name="PredDrv_stFailUsrIf_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="182" comment="Reason why user interface of force feedback pedal is unchangeable" max="4.29497e+09" min="0" name="PredDrv_stReasUsrIfAceped_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="186" comment="User interface of sailing mode is available" max="255" min="0" name="Veh_bAvl_bSailUsrIf_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="187" comment="Sailing mode is activated in HMI" max="255" min="0" name="Veh_bSailUsrIf_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="188" comment="Source information of speed limit from traffic sign detection" max="4.29497e+09" min="0" name="PDVLim_stSrc_vTrfcSign_VW" type="tUInt32" unit="-" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="192" comment="Recuperation is used in the calculation of the overrun Array" max="255" min="0" name="PDVPred_bRcpCalc_VW" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="193" comment="Long term offset correction for longitudinal acceleration sensor" max="3.40282e+38" min="1.17549e-38" name="VehFRstnAdp_aLgtOfs_VW" type="tFloat32" unit="m/s2" />
+   <element alignment="1" arraysize="20" byteorder="LE" bytepos="197" comment="Array for predictive velocity trajectory while coasting with open powertrain" max="3.40282e+38" min="1.17549e-38" name="PDVPred_vPred_VW" type="tFloat32" unit="km/h" />
+  </struct>
+  <struct alignment="1" name="simple_f64_struct" version="1">
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="value" type="tFloat64" />
+  </struct>
+  <struct alignment="1" name="tCAN_Config_Codec_Ext_NaviMIT" version="1">
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="0" name="streamNaviMIT" type="tCAN_Config_Codec_Ext_NaviMIT_streamNaviMIT" />
+  </struct>
+  <struct alignment="8" name="tCAN_Config_Codec_Ext_NaviMIT_streamNaviMIT" version="1">
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="0" name="PSD_Pos_Inhibitzeit" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="8" name="PSD_Steigung_2_Steigung" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="16" name="PSD_Steigung_1_B_Steigung" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="24" name="PSD_Steigung_1_A_Steigung" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="32" name="PSD_Ges_Geschwindigkeit_Witter" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="33" name="PSD_Attribut_5_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="34" name="PSD_Attribut_4_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="35" name="PSD_Attribut_3_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="36" name="PSD_Attribut_2_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="37" name="PSD_Attribut_1_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="38" name="PSD_Ges_Typ" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="39" name="PSD_Ges_Geschwindigkeit_Gespann" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="40" name="PSD_Sys_US_State" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="41" name="PSD_Vorgaenger_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="42" name="PSD_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="43" name="PSD_Sys_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="44" name="PSD_Ges_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="45" name="PSD_Steigung_2_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="46" name="PSD_Steigung_1_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="47" name="PSD_Attribut_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="48" name="PSD_Attribut_Segment_ID_05" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="49" name="PSD_Pos_Segment_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="50" name="PSD_Strassenkategorie" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="51" name="PSD_Rampe" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="52" name="PSD_Sys_Laendercode" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="53" name="PSD_Sys_Mapmatchingguete" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="54" name="PSD_Sys_Alter_Karte" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="55" name="PSD_Pos_Fehler_Laengsrichtung" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="56" name="PSD_Ges_Gesetzlich_Kategorie" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="57" name="PSD_Ges_Gesetzlich_Zusatz" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="58" name="PSD_Fahrspuren_Anzahl" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="59" name="PSD_Ges_Spur_Geschw_Begrenzung" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="60" name="PSD_Attribut_5_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="61" name="PSD_Attribut_4_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="62" name="PSD_Attribut_3_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="63" name="PSD_Attribut_2_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="64" name="PSD_Attribut_1_ID" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="65" name="PSD_Ges_Geschwindigkeit_Std_Ende" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="66" name="PSD_Ges_Geschwindigkeit_Std_Anf" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="67" name="PSD_Sys_Geometrieguete" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="68" name="PSD_Ges_Geschwindigkeit_Tag_Ende" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="69" name="PSD_Ges_Geschwindigkeit_Tag_Anf" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="70" name="PSD_Ges_Geschwindigkeit" type="tUInt8" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="72" name="PSD_Segmentlaenge" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="80" name="PSD_Pos_Segmentlaenge" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="88" name="PSD_Ges_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="96" name="PSD_Steigung_2_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="104" name="PSD_Steigung_1_B_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="112" name="PSD_Steigung_1_A_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="120" name="PSD_Attribut_5_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="128" name="PSD_Attribut_4_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="136" name="PSD_Attribut_3_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="144" name="PSD_Attribut_2_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="152" name="PSD_Attribut_1_Offset" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="160" name="PSD_Endkruemmung" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="161" name="PSD_Anfangskruemmung" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="162" name="PSD_Steigung_2_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="163" name="PSD_Steigung_1_B_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="164" name="PSD_Steigung_1_A_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="165" name="PSD_Segment_Komplett" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="166" name="PSD_Ges_Attribute_Komplett" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="167" name="PSD_Steigung_2_Attribute_kompl" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="168" name="PSD_Steigung_1_Attribute_kompl" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="169" name="PSD_Attribute_Komplett_06" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="170" name="PSD_Attribute_Komplett_05" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="171" name="PSD_Geradester_Pfad" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="172" name="PSD_Sys_Geschwindigkeit_Einheit" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="173" name="PSD_Endkruemmung_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="174" name="PSD_Anfangskruemmung_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="175" name="PSD_Sys_Zielfuehrung" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="176" name="PSD_wahrscheinlichster_Pfad" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="177" name="PSD_Baum_Laenge_VZ" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="178" name="PSD_Sys_Verkehrsrichtung" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="179" name="PSD_Abzweigerichtung" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="180" name="PSD_Baum_Breite_VZ" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="181" name="PSD_ADAS_Qualitaet" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="182" name="PSD_Pos_Standort_Eindeutig" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="183" name="PSD_Bebauung" type="tBool" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="184" name="PSD_Baum_Laenge" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="192" name="PSD_Baum_Breite" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="200" name="PSD_Baum_Ausrichtung" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="208" name="PSD_Abzweigewinkel" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="216" name="PSD_LR_01_MUX" type="tUInt8" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="224" name="PSD_LR_Fahrzeug_Pos" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="232" name="PSD_LR_Steigung_3_Wert" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="240" name="PSD_LR_Steigung_2_Wert" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="248" name="PSD_LR_Steigung_1_Wert" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="256" name="PSD_LR_Steigung_3_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="264" name="PSD_LR_Steigung_2_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="272" name="PSD_LR_Steigung_1_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="280" name="PSD_LR_Attribut_3_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="288" name="PSD_LR_Attribut_2_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="296" name="PSD_LR_Attribut_1_Offset" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="304" name="PSD_LR_Globale_Steigung" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="312" name="PSD_LR_Attribut_3_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="313" name="PSD_LR_Attribut_2_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="314" name="PSD_LR_Attribut_1_Wert" type="tUInt8" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="315" name="PSD_LR_Profil_Nummer" type="tUInt8" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="320" name="PSD_LR_Max_Koeff_Amp" type="tFloat64" />
+   <element alignment="8" arraysize="1" byteorder="LE" bytepos="328" name="PSD_LR_Profil_Laenge" type="tFloat64" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="336" name="PSD_LR_Steigung_3_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="337" name="PSD_LR_Steigung_2_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="338" name="PSD_LR_Steigung_1_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="339" name="PSD_LR_Globale_Steigung_Vorz" type="tBool" />
+   <element alignment="1" arraysize="1" byteorder="LE" bytepos="340" name="PSD_LR_Reset" type="tBool" />
+  </struct>
+ </structs>
+ <streams />
+</adtf:ddl>

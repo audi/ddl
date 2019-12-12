@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+    <header>
+        <language_version>3.00</language_version>
+        <author></author>
+        <date_creation></date_creation>
+        <date_change></date_change>
+        <description></description>
+    </header>
+    <units>
+    </units>
+    <datatypes>
+    </datatypes>
+    <enums>
+    </enums>
+    <structs>
+        <struct alignment="2" name="simple_struct3" version="0">
+            <element alignment="2" arraysize="1" byteorder="LE" bytepos="0" name="c" type="tUInt32" />
+        </struct>
+        <struct alignment="1" name="simple_struct1" version="0">
+            <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="a" type="tUInt8" />
+        </struct>
+        <struct alignment="1" name="simple_struct2" version="0">
+            <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="b" type="tUInt16" />
+        </struct>
+        <struct alignment="2" name="simple_struct5" version="0">
+            <element alignment="2" arraysize="1" byteorder="LE" bytepos="0" name="d" type="tUInt64" />
+        </struct>
+        <struct alignment="1" name="simple_struct6" version="0">
+            <element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="e" type="tUInt64" />
+        </struct>
+    </structs>
+    <streams />
+</adtf:ddl>

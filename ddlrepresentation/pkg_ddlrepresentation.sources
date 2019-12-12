@@ -1,0 +1,82 @@
+set(DDLREPRESENTATION_DIR ddlrepresentation)
+
+set(DDLREPRESENTATION_H
+    ${DDLREPRESENTATION_DIR}/ddl_common.h
+    ${DDLREPRESENTATION_DIR}/pkg_ddlrepresentation.h
+
+    ${DDLREPRESENTATION_DIR}/ddl_error.h
+    ${DDLREPRESENTATION_DIR}/ddlversion.h
+
+    ${DDLREPRESENTATION_DIR}/ddl_intf.h
+    ${DDLREPRESENTATION_DIR}/ddl_type.h
+    ${DDLREPRESENTATION_DIR}/ddlalignment.h
+
+    ${DDLREPRESENTATION_DIR}/ddlserializable_intf.h
+    ${DDLREPRESENTATION_DIR}/ddlunit_intf.h
+    ${DDLREPRESENTATION_DIR}/ddldatatype_intf.h
+    ${DDLREPRESENTATION_DIR}/ddlvisitor_intf.h
+    ${DDLREPRESENTATION_DIR}/ddlfactorymethod_intf.h
+
+    ${DDLREPRESENTATION_DIR}/ddlbyteorder.h
+    ${DDLREPRESENTATION_DIR}/ddlcomplex.h
+    ${DDLREPRESENTATION_DIR}/ddldatatype.h
+    ${DDLREPRESENTATION_DIR}/ddlheader.h
+    ${DDLREPRESENTATION_DIR}/ddlstream.h
+    ${DDLREPRESENTATION_DIR}/ddlenum.h
+    ${DDLREPRESENTATION_DIR}/ddlcontainer.h
+    ${DDLREPRESENTATION_DIR}/ddldescription.h
+    ${DDLREPRESENTATION_DIR}/ddlunit.h
+    ${DDLREPRESENTATION_DIR}/ddlrefunit.h
+    ${DDLREPRESENTATION_DIR}/ddlprefix.h
+    ${DDLREPRESENTATION_DIR}/ddlextdeclaration.h
+    ${DDLREPRESENTATION_DIR}/ddlelement.h
+    ${DDLREPRESENTATION_DIR}/ddlbaseunit.h
+    ${DDLREPRESENTATION_DIR}/ddlstreamstruct.h
+    ${DDLREPRESENTATION_DIR}/ddlprinter.h
+    ${DDLREPRESENTATION_DIR}/ddlimporter.h
+    ${DDLREPRESENTATION_DIR}/ddlcloner.h
+    ${DDLREPRESENTATION_DIR}/ddlresolver.h
+    ${DDLREPRESENTATION_DIR}/ddlrepair.h
+    ${DDLREPRESENTATION_DIR}/ddlinspector.h
+    ${DDLREPRESENTATION_DIR}/ddlcompare.h
+    ${DDLREPRESENTATION_DIR}/ddlstreammetatype.h
+    ${DDLREPRESENTATION_DIR}/ddlproperty.h
+)
+
+set(DDLREPRESENTATION_CPP
+
+    ${DDLREPRESENTATION_DIR}/ddl_error.cpp
+    ${DDLREPRESENTATION_DIR}/ddlversion.cpp
+
+    ${DDLREPRESENTATION_DIR}/ddl_type.cpp
+    ${DDLREPRESENTATION_DIR}/ddlalignment.cpp
+
+    ${DDLREPRESENTATION_DIR}/ddlbyteorder.cpp
+    ${DDLREPRESENTATION_DIR}/ddlcomplex.cpp
+    ${DDLREPRESENTATION_DIR}/ddldatatype.cpp
+    ${DDLREPRESENTATION_DIR}/ddlheader.cpp
+    ${DDLREPRESENTATION_DIR}/ddlstream.cpp
+    ${DDLREPRESENTATION_DIR}/ddlenum.cpp
+    ${DDLREPRESENTATION_DIR}/ddlcontainer.cpp
+    ${DDLREPRESENTATION_DIR}/ddldescription.cpp
+    ${DDLREPRESENTATION_DIR}/ddlunit.cpp
+    ${DDLREPRESENTATION_DIR}/ddlrefunit.cpp
+    ${DDLREPRESENTATION_DIR}/ddlprefix.cpp
+    ${DDLREPRESENTATION_DIR}/ddlextdeclaration.cpp
+    ${DDLREPRESENTATION_DIR}/ddlelement.cpp
+    ${DDLREPRESENTATION_DIR}/ddlbaseunit.cpp
+    ${DDLREPRESENTATION_DIR}/ddlstreamstruct.cpp
+    ${DDLREPRESENTATION_DIR}/ddlprinter.cpp
+    ${DDLREPRESENTATION_DIR}/ddlimporter.cpp
+    ${DDLREPRESENTATION_DIR}/ddlcloner.cpp
+    ${DDLREPRESENTATION_DIR}/ddlresolver.cpp
+    ${DDLREPRESENTATION_DIR}/ddlrepair.cpp
+    ${DDLREPRESENTATION_DIR}/ddlinspector.cpp
+    ${DDLREPRESENTATION_DIR}/ddlcompare.cpp
+    ${DDLREPRESENTATION_DIR}/ddlstreammetatype.cpp
+    ${DDLREPRESENTATION_DIR}/ddlproperty.cpp
+)
+
+set(DDLREPRESENTATION_INSTALL ${DDLREPRESENTATION_H})
+source_group(${DDLREPRESENTATION_DIR} FILES ${DDLREPRESENTATION_H} ${DDLREPRESENTATION_CPP})
+

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+	<header>
+		<language_version>1.02</language_version>
+		<author>fneumth</author>
+		<date_creation>28.09.2011</date_creation>
+		<date_change>01.01.1900</date_change>
+		<description>ADTF generated</description>
+	</header>
+	<units>
+		<baseunit description="Fundamental unit for electric current" name="Ampere" symbol="A" />
+		<baseunit description="Fundamental unit for luminous intensity" name="Candela" symbol="cd" />
+		<baseunit description="Non-SI standard unit for angle" name="Degree" symbol="deg" />
+		<baseunit description="Fundamental unit for thermodynamic temperature" name="Kelvin" symbol="K" />
+		<baseunit description="Fundamental unit for mass" name="Kilogram" symbol="kg" />
+		<baseunit description="Fundamental unit for length" name="Metre" symbol="m" />
+		<baseunit description="Fundamental unit for amount of substance" name="Mole" symbol="mol" />
+		<baseunit description="Non-SI standard unit for angle" name="Radiant" symbol="rad" />
+		<baseunit description="Fundamental unit for time" name="Second" symbol="s" />
+		<baseunit description="No SI, but needed for own unit definitions" name="Unitless" symbol="" />
+		<prefixes name="atto" power="-18" symbol="a" />
+		<prefixes name="centi" power="-2" symbol="c" />
+		<prefixes name="deca" power="1" symbol="da" />
+		<prefixes name="deci" power="-1" symbol="d" />
+		<prefixes name="exa" power="18" symbol="E" />
+		<prefixes name="femto" power="-15" symbol="f" />
+		<prefixes name="giga" power="9" symbol="G" />
+		<prefixes name="hecto" power="2" symbol="h" />
+		<prefixes name="kilo" power="3" symbol="k" />
+		<prefixes name="mega" power="6" symbol="M" />
+		<prefixes name="micro" power="-6" symbol="u" />
+		<prefixes name="milli" power="-3" symbol="m" />
+		<prefixes name="nano" power="-9" symbol="n" />
+		<prefixes name="peta" power="15" symbol="P" />
+		<prefixes name="pico" power="-12" symbol="p" />
+		<prefixes name="tera" power="12" symbol="T" />
+		<prefixes name="yocto" power="-24" symbol="y" />
+		<prefixes name="yotta" power="24" symbol="Y" />
+		<prefixes name="zepto" power="-21" symbol="z" />
+		<prefixes name="zetta" power="21" symbol="Z" />
+	</units>
+	<datatypes>
+		<datatype description="predefined ADTF tBool datatype" name="tBool" size="8" />
+		<datatype description="predefined ADTF tChar datatype" name="tChar" size="8" />
+		<datatype description="predefined ADTF tFloat32 datatype" name="tFloat32" size="32" />
+		<datatype description="predefined ADTF tFloat64 datatype" name="tFloat64" size="64" />
+		<datatype description="predefined ADTF tInt16 datatype" name="tInt16" size="16" />
+		<datatype description="predefined ADTF tInt32 datatype" name="tInt32" size="32" />
+		<datatype description="predefined ADTF tInt64 datatype" name="tInt64" size="64" />
+		<datatype description="predefined ADTF tInt8 datatype" name="tInt8" size="8" />
+		<datatype description="predefined ADTF tUInt16 datatype" name="tUInt16" size="16" />
+		<datatype description="predefined ADTF tUInt32 datatype" name="tUInt32" size="32" />
+		<datatype description="predefined ADTF tUInt64 datatype" name="tUInt64" size="64" />
+		<datatype description="predefined ADTF tUInt8 datatype" name="tUInt8" size="8" />
+	</datatypes>
+	<structs>
+		<struct alignment="8" name="scHCAObjectData" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="i16Number" type="tInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="2" name="i16DxV" type="tInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="i16DyV" type="tInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="6" name="i16VxV" type="tInt16" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="i16Width" type="tInt16" />
+			<element alignment="1" arraysize="6" byteorder="LE" bytepos="10" description="Padding for compatibility with MATLAB" name="ui8Spare" type="tUInt8" />
+		</struct>
+		<struct alignment="8" name="scHCATrackData" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="i32DistanceY" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="4" name="i32YawAngleDiff" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="i32HorizCurve" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="12" name="i32HorizCurveChange" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="i32Foresight" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="20" name="i32Quality" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="24" name="i32TrackID" type="tInt32" />
+			<element alignment="1" arraysize="4" byteorder="LE" bytepos="28" description="Padding for compatibility with MATLAB" name="ui8Spare" type="tUInt8" />
+		</struct>
+		<struct alignment="8" name="scHCAData" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f64TorqueFactor" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="f64KBIShownVelo" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="f64ESPVelo" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="24" name="bBHIndicatorLeft" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="25" name="bBHIndicatorRight" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="26" name="bABBeltWarnVF" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="27" name="ui8MMIHCAIntrPoT" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="28" name="bMMIHCAVibrActive" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="29" name="bLDWActive" type="tBool" />
+			<element alignment="1" arraysize="2" byteorder="LE" bytepos="30" description="Padding for compatibility with MATLAB" name="ui8Spare" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="32" name="f64MUSteerWhAngle" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="40" name="f64ESPBrakePress" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="48" name="f64FDSteerWhTorque" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="56" name="f64SARAOmegaZb" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="64" name="f64SARAAccelYb" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="72" name="f64ESPVSignal" type="tFloat64" />
+			<element alignment="1" arraysize="10" byteorder="LE" bytepos="80" name="asObject" type="scHCAObjectData" />
+			<element alignment="1" arraysize="8" byteorder="LE" bytepos="240" name="asTrack" type="scHCATrackData" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="496" name="i32LaneId" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="500" name="i32LaneCount" type="tInt32" />
+		</struct>
+		<struct alignment="8" name="sDebugData" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f64DistanceY0" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="f64DistanceY1" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="f64HorizCurve0" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="24" name="f64HorizCurve1" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="32" name="f64YawAngleDiff0" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="40" name="f64YawAngleDiff1" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="48" name="f64HorizCurveChange0" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="56" name="f64HorizCurveChange1" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="64" name="f64HCAStatus" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="72" name="f64Torque" type="tFloat64" />
+		</struct>
+		<struct alignment="8" name="usHCATrackData" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f32DistanceY" type="tFloat32" />
+			<element alignment="1" arraysize="4" byteorder="LE" bytepos="4" description="Padding for compatibility with MATLAB" name="ui8Spare0" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="f64YawAngleDiff" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="f64HorizCurve" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="24" name="f64HorizCurveChange" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="32" name="i32Foresight" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="36" name="i32Quality" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="40" name="i32TrackID" type="tInt32" />
+			<element alignment="1" arraysize="4" byteorder="LE" bytepos="44" description="Padding for compatibility with MATLAB" name="ui8Spare1" type="tUInt8" />
+		</struct>
+		<struct alignment="8" name="usHCAData" version="1">
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="0" name="f64TorqueFactor" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="8" name="f64KBIShownVelo" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="16" name="f64ESPVelo" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="24" name="bBHIndicatorLeft" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="25" name="bHIndicatorRight" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="26" name="bABBeltWarnVF" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="27" name="ui8MMIHCAIntrPoT" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="28" name="bMMIHCAVibrActive" type="tBool" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="29" name="bLDWActive" type="tBool" />
+			<element alignment="1" arraysize="2" byteorder="LE" bytepos="30" description="Padding for compatibility with MATLAB" name="ui8Spare" type="tUInt8" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="32" name="f64MUSteerWhAngle" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="40" name="f64ESPBrakePress" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="48" name="f64FDSteerWhTorque" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="56" name="f64SARAOmegaZb" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="64" name="f64SARAAccelYb" type="tFloat64" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="72" name="f64ESPVSignal" type="tFloat64" />
+			<element alignment="1" arraysize="10" byteorder="LE" bytepos="80" name="asObject" type="scHCAObjectData" />
+			<element alignment="1" arraysize="8" byteorder="LE" bytepos="240" name="asTrack" type="usHCATrackData" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="624" name="i32LaneId" type="tInt32" />
+			<element alignment="1" arraysize="1" byteorder="LE" bytepos="628" name="i32LaneCount" type="tInt32" />
+		</struct>
+	</structs>
+	<streams>
+		<stream name="HCADataScaled_Stream" type="scHCAData" />
+		<stream name="HCADataUnscaled_Stream" type="usHCAData" />
+	</streams>
+</adtf:ddl>

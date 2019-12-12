@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<adtf:ddl xmlns:adtf="adtf">
+	<header>
+		<language_version>1.02</language_version>
+		<author>AUDI Electronics Venture GmbH</author>
+		<date_creation>20100407</date_creation>
+		<date_change />
+		<description>ADTF Common Description File</description>
+	</header>
+	<units>
+		<baseunit description="this is the no unit class" name="nou" symbol="" />
+	</units>
+	<datatypes>
+		<datatype description="predefined ADTF tBool datatype"   size="8"   name="tBool" />
+		<datatype description="predefined ADTF tChar datatype"   size="8"   name="tChar" />
+	</datatypes>
+	<structs>
+		<!-- TYPE DESCRIPTIONS-->
+		<struct alignment="1" name="MyUnicodeText" version="1">
+			<element alignment="1" arraysize="32" byteorder="LE" bytepos="0" name="strText" type="tUTF16" />
+		</struct>
+	</structs>
+	<streams/>
+</adtf:ddl>

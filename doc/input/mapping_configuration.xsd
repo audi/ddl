@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="mapping">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="header">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="language_version" type="NonEmptyString" />
+                            <xs:element name="author" type="xs:string" />
+                            <xs:element name="date_creation" type="xs:string" />
+                            <xs:element name="date_change" type="xs:string" />
+                            <xs:element name="description" type="xs:string" />
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sources" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="source" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType> 
+                                    <xs:attribute name="name" type="NonEmptyString" use="required" />
+                                    <xs:attribute name="type" type="NonEmptyString" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="targets" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="target" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="assignment" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="to" type="NonEmptyString" use="required" />
+                                                <xs:attribute name="constant" type="xs:decimal" use="optional" />
+                                                <xs:attribute name="function" type="function_type" use="optional" />
+                                                <xs:attribute name="from" type="NonEmptyString" use="optional" />
+                                                <xs:attribute name="transformation" type="xs:string" use="optional" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="trigger" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="type" type="trigger_type" use="required" />
+                                                <xs:attribute name="period" type="xs:decimal" use="optional" />
+                                                <xs:attribute name="unit" type="period_unit" use="optional" />
+                                                <xs:attribute name="variable" type="xs:string" use="optional" />
+                                                <xs:attribute name="operator" type="xs:string" use="optional" />
+                                                <xs:attribute name="value" type="xs:string" use="optional" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="name" type="NonEmptyString" use="required" />
+                                    <xs:attribute name="type" type="NonEmptyString" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="transformations" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="polynomial" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="a" type="xs:decimal" use="optional" />
+                                    <xs:attribute name="b" type="xs:decimal" use="optional" />
+                                    <xs:attribute name="c" type="xs:decimal" use="optional" />
+                                    <xs:attribute name="d" type="xs:decimal" use="optional" />
+                                    <xs:attribute name="e" type="xs:decimal" use="optional" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="enum_table" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="conversion" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="from" type="xs:string" use="required" />
+                                                <xs:attribute name="to" type="xs:string" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="from" type="xs:string" use="required" />
+                                    <xs:attribute name="to" type="xs:string" use="required" />
+                                    <xs:attribute name="default" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="function_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="simulation_time\(\)|trigger_counter\(\d+\)|received\(.*\)" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="trigger_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="periodic" />
+            <xs:enumeration value="data" />
+            <xs:enumeration value="signal" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="period_unit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="us" />
+            <xs:enumeration value="ms" />
+            <xs:enumeration value="s" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,3 @@
+add_subdirectory(generator_library)
+add_subdirectory(ddl2header)
+add_subdirectory(header2ddl)

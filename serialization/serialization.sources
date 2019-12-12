@@ -1,0 +1,14 @@
+set(SERIALIZATION_DIR serialization)
+
+set(SERIALIZATION_H
+    ${SERIALIZATION_DIR}/pkg_serialization.h
+    ${SERIALIZATION_DIR}/serialization.h
+)
+
+set(SERIALIZATION_CPP
+    ${SERIALIZATION_DIR}/serialization.cpp
+)
+
+set(SERIALIZATION_INSTALL ${SERIALIZATION_H})
+source_group(${SERIALIZATION_DIR} FILES ${SERIALIZATION_H} ${SERIALIZATION_CPP})
+
