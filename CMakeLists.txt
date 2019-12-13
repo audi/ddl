@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8.2) # cxx_std_11
 project(ddl_library VERSION 4.4.0)
 
-# Disable extensions here and require the chosen CMAKE_CXX_STANDARD
+# Disable extensions here and require the chosen CMAKE_CXX_STANDARD (coming from e.g. Conan)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 11)
@@ -40,10 +40,6 @@ option(ddl_cmake_enable_ddl_generator_tools
        "Enable building of the two tools ddl2header and header2ddl (default: OFF)"
        OFF)
 # End Options #############################################
-
-# Disable extensions here and require the chosen CMAKE_CXX_STANDARD (coming from e.g. Conan)
-set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Check for default install prefix and cmake build type (UNIX)
 include(./cmake/check_cmake_install_prefix.cmake)
