@@ -3,7 +3,7 @@
 
 # Description
 
-The Data Defintion Language (DDL) Package provides utilities to handle data descriptions and data defined by these descriptions.
+The Data Definition Language (DDL) Package provides utilities to handle data descriptions and data defined by these descriptions.
 
     #include <ddl.h>
 
@@ -80,8 +80,8 @@ ________________________
 
 ## a_util library
  
-The libraries above depend on the *a_util library* 
-See a_util repository at https://github.com/AEV
+The libraries above depend on the *a_util* library
+See *a_util* repository at https://github.com/AEV/a_util
 
 ## How to build
 
@@ -98,14 +98,9 @@ The libraries are build and tested only under following compilers and operating 
 * On other distributions make at least sure that libc has version >= 2.23 and libstdc++ >= 6.0.21.
 * gcc 5.4 
  
-### How to build
- 
-If you can not reach the above online repositories the bundle of it is delivered within a separate download area or installation. 
-See [Delivered repository versions](@ref page_delivered_versions).
-
 #### Build a_util first
  
-The ADTF File Library will only build if a installation of a_utils library is provided.
+The DDL library will only build if a *installation* of a_util library is provided.
 Following libraries of the a_utils are necessary:
 * a_util_concurrency
 * a_util_memory
@@ -116,15 +111,15 @@ Following libraries of the a_utils are necessary:
 * a_util_xml
  
 - Use CMAKE at least in version 3.5.1.  
-- Use the Release Branch \p "Release/a_util-version-branch" see [Delivered repository versions](@ref page_delivered_versions)
-- Use CMakeLists.txt within the main directory as Source Directory
+- Use the release tag \p "v*a_util-version*" 
+- Use CMakeLists.txt within the main directory as source directory
 - Do not forget to set a CMAKE_INSTALL_PREFIX 
 - Build and install for Debug and Release
 
 #### Build ddl library
  
 - Use CMAKE at least in version 3.5.1.  
-- Use the Release Branch \p "Release/ddl-version-branch". see [Delivered repository versions](@ref page_delivered_versions)
+- Use the relase tag \p "v*ddl-version*". 
 - Use CMakeLists.txt within the main directory as Source Directory
 - Do not forget to set a CMAKE_INSTALL_PREFIX 
 - Build and install for Debug and Release
@@ -137,10 +132,10 @@ Following libraries of the a_utils are necessary:
 a_util_DIR
 </td>
 <td>
-must be set to *a_util_install*/lib/cmake/a_util 
+must be set to *a_util_install_DIR*/lib/cmake/a_util 
 </td>
 <td>
-See a_util repository at https://github.com/AEV
+See a_util repository at https://github.com/AEV/a_util
 </td>
 </tr>
 <tr>
