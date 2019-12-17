@@ -33,12 +33,12 @@ option(ddl_cmake_enable_tests
        OFF)
        
 option(ddl_cmake_enable_installation
-       "Enable installation of the ddl library to CMAKE_INSTALL_PREFIX (default: OFF)"
-       OFF)
+       "Enable installation of the ddl library to CMAKE_INSTALL_PREFIX (default: ON)"
+       ON)
        
 option(ddl_cmake_enable_ddl_generator_tools
-       "Enable building of the two tools ddl2header and header2ddl (default: OFF)"
-       OFF)
+       "Enable building of the two tools ddl2header and header2ddl (default: ON)"
+       ON)
 # End Options #############################################
 
 # Check for default install prefix and cmake build type (UNIX)
