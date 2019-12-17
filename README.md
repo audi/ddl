@@ -175,7 +175,7 @@ choose wether the tools must be build too
 ddl_cmake_enable_installation ON/OFF 
 </td>
 <td>
-choose wether the tools must be build too
+choose wether the libraries are installed or not
 </td>
 <td>
 </td>
