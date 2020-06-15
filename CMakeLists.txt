@@ -112,7 +112,9 @@ if(ddl_cmake_enable_tests)
     add_subdirectory(test)
 endif()
 
-add_subdirectory(ddlgenerators)
+if(ddl_cmake_enable_ddl_generator_tools)
+    add_subdirectory(ddlgenerators)
+endif()
 
 if(ddl_cmake_enable_installation)
     install(TARGETS ddl ARCHIVE DESTINATION lib)
