@@ -25,8 +25,8 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-5, ERR_INVALID_ARG)
-    _MAKE_RESULT(-20, ERR_NOT_FOUND)
+    _MAKE_RESULT(-5, ERR_INVALID_ARG);
+    _MAKE_RESULT(-20, ERR_NOT_FOUND);
 
     DDLUnit::DDLUnit() :
         _name{},

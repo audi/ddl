@@ -23,8 +23,8 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-20, ERR_NOT_FOUND)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-20, ERR_NOT_FOUND);
 
     struct tEnumName
     {

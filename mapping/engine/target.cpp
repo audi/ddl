@@ -32,9 +32,9 @@ namespace mapping
 namespace rt
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-3, ERR_UNEXPECTED)
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-12, ERR_MEMORY)
+    _MAKE_RESULT(-3, ERR_UNEXPECTED);
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-12, ERR_MEMORY);
 }
 }
 

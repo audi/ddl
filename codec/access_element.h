@@ -32,8 +32,8 @@ namespace access_element
 {
 
 //define all needed error types and values locally
-_MAKE_RESULT(-3, ERR_UNEXPECTED)
-_MAKE_RESULT(-20, ERR_NOT_FOUND)
+_MAKE_RESULT(-3, ERR_UNEXPECTED);
+_MAKE_RESULT(-20, ERR_NOT_FOUND);
 
 namespace detail
 {

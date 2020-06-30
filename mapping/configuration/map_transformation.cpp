@@ -31,9 +31,9 @@ namespace mapping
 namespace oo
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-5, ERR_INVALID_ARG)
-    _MAKE_RESULT(-40, ERR_INVALID_STATE)
-    _MAKE_RESULT(-42, ERR_INVALID_TYPE)
+    _MAKE_RESULT(-5, ERR_INVALID_ARG);
+    _MAKE_RESULT(-40, ERR_INVALID_STATE);
+    _MAKE_RESULT(-42, ERR_INVALID_TYPE);
 }
 }
 

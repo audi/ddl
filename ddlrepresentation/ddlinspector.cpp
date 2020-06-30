@@ -43,12 +43,12 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-5, ERR_INVALID_ARG)
-    _MAKE_RESULT(-8, ERR_INVALID_HANDLE)
-    _MAKE_RESULT(-16, ERR_NOT_IMPL)
-    _MAKE_RESULT(-20, ERR_NOT_FOUND)
-    _MAKE_RESULT(-43, ERR_EMPTY)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-5, ERR_INVALID_ARG);
+    _MAKE_RESULT(-8, ERR_INVALID_HANDLE);
+    _MAKE_RESULT(-16, ERR_NOT_IMPL);
+    _MAKE_RESULT(-20, ERR_NOT_FOUND);
+    _MAKE_RESULT(-43, ERR_EMPTY);
 
     /// Alignment target
     static size_t const s_szAlignSize = 4;

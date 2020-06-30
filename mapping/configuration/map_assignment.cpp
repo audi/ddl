@@ -23,8 +23,8 @@ namespace mapping
 {
 namespace oo
 {
-    //define all needed error types and values locally
-    _MAKE_RESULT(-5, ERR_INVALID_ARG)
+//define all needed error types and values locally
+_MAKE_RESULT(-5, ERR_INVALID_ARG);
 }
 }
 

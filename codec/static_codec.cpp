@@ -28,8 +28,8 @@ namespace ddl
 {
 
 //define all needed error types and values locally
-_MAKE_RESULT(-5, ERR_INVALID_ARG)
-_MAKE_RESULT(-10, ERR_INVALID_INDEX)
+_MAKE_RESULT(-5, ERR_INVALID_ARG);
+_MAKE_RESULT(-10, ERR_INVALID_INDEX);
 
 StaticDecoder::StaticDecoder(a_util::memory::shared_ptr<const StructLayout> pLayout,
                                const void* pData, size_t nDataSize,

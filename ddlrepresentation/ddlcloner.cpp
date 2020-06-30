@@ -42,10 +42,10 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-16, ERR_NOT_IMPL)
-    _MAKE_RESULT(-18, ERR_NO_CLASS)
-    _MAKE_RESULT(-37, ERR_NOT_INITIALIZED)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-16, ERR_NOT_IMPL);
+    _MAKE_RESULT(-18, ERR_NO_CLASS);
+    _MAKE_RESULT(-37, ERR_NOT_INITIALIZED);
 
     DDLDescription * DDLCloner::getDDL() const
     {

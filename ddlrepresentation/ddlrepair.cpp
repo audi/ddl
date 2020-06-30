@@ -41,9 +41,9 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-8, ERR_INVALID_HANDLE)
-    _MAKE_RESULT(-16, ERR_NOT_IMPL)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-8, ERR_INVALID_HANDLE);
+    _MAKE_RESULT(-16, ERR_NOT_IMPL);
 
     a_util::result::Result DDLRepair::visitDDL(DDLDescription* poDescription)
     {

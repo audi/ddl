@@ -29,9 +29,9 @@
 namespace ddl
 {
 //define all needed error types and values locally
-_MAKE_RESULT(-10, ERR_INVALID_INDEX)
-_MAKE_RESULT(-20, ERR_NOT_FOUND)
-_MAKE_RESULT(-37, ERR_NOT_INITIALIZED)
+_MAKE_RESULT(-10, ERR_INVALID_INDEX);
+_MAKE_RESULT(-20, ERR_NOT_FOUND);
+_MAKE_RESULT(-37, ERR_NOT_INITIALIZED);
 
 static a_util::result::Result getDDL(const char* strMediaDescription,
                       a_util::memory::unique_ptr<DDLDescription>& pDDL)

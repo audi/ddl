@@ -29,11 +29,11 @@ using namespace mapping::oo;
 using namespace mapping::rt;
 using namespace ddl;
 
-_MAKE_RESULT(-5, ERR_INVALID_ARG)
-    _MAKE_RESULT(-11, ERR_INVALID_FILE)
-    _MAKE_RESULT(-20, ERR_NOT_FOUND)
-    _MAKE_RESULT(-40, ERR_INVALID_STATE)
-    _MAKE_RESULT(-42, ERR_INVALID_TYPE)
+_MAKE_RESULT(-5, ERR_INVALID_ARG);
+_MAKE_RESULT(-11, ERR_INVALID_FILE);
+_MAKE_RESULT(-20, ERR_NOT_FOUND);
+_MAKE_RESULT(-40, ERR_INVALID_STATE);
+_MAKE_RESULT(-42, ERR_INVALID_TYPE);
 
     ddl::DDLDescription* LoadDDL(const std::string& strDDLFile)
 {
