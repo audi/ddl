@@ -25,7 +25,7 @@
 
 #define PLATFORM_BYTEORDER          __get_platform_byteorder()
 
-_MAKE_RESULT(-20, ERR_NOT_FOUND)
+_MAKE_RESULT(-20, ERR_NOT_FOUND);
 
     /**
     * This function retrieves the platform dependent byte order.

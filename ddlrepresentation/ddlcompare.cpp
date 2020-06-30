@@ -47,10 +47,10 @@ namespace ddl
 {
 
 //define all needed error types and values locally
-_MAKE_RESULT(-3, ERR_UNEXPECTED)
-_MAKE_RESULT(-5, ERR_INVALID_ARG)
-_MAKE_RESULT(-20, ERR_NOT_FOUND)
-_MAKE_RESULT(-38, ERR_FAILED)
+_MAKE_RESULT(-3, ERR_UNEXPECTED);
+_MAKE_RESULT(-5, ERR_INVALID_ARG);
+_MAKE_RESULT(-20, ERR_NOT_FOUND);
+_MAKE_RESULT(-38, ERR_FAILED);
 
 #define COMPARE(__name, __method) __name##1->__method() != __name##2->__method()
 #define COMPARE_VERSION(__name, __method, __flag_prefix) ((flags & DDLCompare::__flag_prefix ## _versions) && (__name##1->__method() != __name##2->__method()))

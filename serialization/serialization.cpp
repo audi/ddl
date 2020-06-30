@@ -26,7 +26,7 @@ namespace ddl
 namespace serialization
 {
 //define all needed error types and values locally
-_MAKE_RESULT(-12, ERR_MEMORY)
+_MAKE_RESULT(-12, ERR_MEMORY);
 
 a_util::result::Result transform_to_buffer(const Decoder& decoder, a_util::memory::MemoryBuffer& buffer, bool zero)
 {

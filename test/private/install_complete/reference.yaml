@@ -104,20 +104,26 @@ documentation:
         - doc/html/*
         
 
-linux_debug:
+linux_and_qnx_debug:
     conditions:
-        lagd:
+        lagd_linux:
             os: Linux
+            build_type: Debug
+        lagd_qnx:
+            os: Neutrino
             build_type: Debug
     files:
         - bin/debug/ddl2header
         - bin/debug/header2ddl
         - lib/libddld.a
 
-linux_release:
+linux_and_qnx_release:
     conditions:
-        lagd:
+        lagd_linux:
             os: Linux
+            build_type: Release
+        lagd_qnx:
+            os: Neutrino
             build_type: Release
     files:
         - bin/ddl2header

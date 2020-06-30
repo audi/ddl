@@ -34,8 +34,8 @@ namespace mapping
 namespace rt
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-42, ERR_INVALID_TYPE)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-42, ERR_INVALID_TYPE);
 }
 }
 

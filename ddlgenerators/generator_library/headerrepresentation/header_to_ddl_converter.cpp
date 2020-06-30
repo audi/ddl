@@ -26,10 +26,10 @@ namespace ddl_generator
     namespace oo
     {
         //define all needed error types and values locally
-        _MAKE_RESULT(0, ERR_NOERROR)
-            _MAKE_RESULT(-19, ERR_NOT_SUPPORTED)
-            _MAKE_RESULT(-16, ERR_NOT_IMPL)
-            _MAKE_RESULT(-38, ERR_FAILED)
+        _MAKE_RESULT(0, ERR_NOERROR);
+        _MAKE_RESULT(-19, ERR_NOT_SUPPORTED);
+        _MAKE_RESULT(-16, ERR_NOT_IMPL);
+        _MAKE_RESULT(-38, ERR_FAILED);
     }
 }
 

@@ -27,11 +27,11 @@ namespace mapping
 namespace rt
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-5, ERR_INVALID_ARG)
-    _MAKE_RESULT(-16, ERR_NOT_IMPL)
-    _MAKE_RESULT(-40, ERR_INVALID_STATE)
-    _MAKE_RESULT(-42, ERR_INVALID_TYPE)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-5, ERR_INVALID_ARG);
+    _MAKE_RESULT(-16, ERR_NOT_IMPL);
+    _MAKE_RESULT(-40, ERR_INVALID_STATE);
+    _MAKE_RESULT(-42, ERR_INVALID_TYPE);
 }
 }
 

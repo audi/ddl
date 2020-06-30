@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8.2) # cxx_std_11
-project(ddl_library VERSION 4.4.0)
+project(ddl_library VERSION 4.4.1)
 
-# Disable extensions here and require the chosen CMAKE_CXX_STANDARD (coming from e.g. Conan)
+# Disable extensions here and require the chosen CMAKE_CXX_STANDARD
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 11)
@@ -33,13 +33,17 @@ option(ddl_cmake_enable_tests
        OFF)
        
 option(ddl_cmake_enable_installation
-       "Enable installation of the ddl library to CMAKE_INSTALL_PREFIX (default: ON)"
-       ON)
+       "Enable installation of the ddl library to CMAKE_INSTALL_PREFIX (default: OFF)"
+       OFF)
        
 option(ddl_cmake_enable_ddl_generator_tools
-       "Enable building of the two tools ddl2header and header2ddl (default: ON)"
-       ON)
+       "Enable building of the two tools ddl2header and header2ddl (default: OFF)"
+       OFF)
 # End Options #############################################
+
+# Disable extensions here and require the chosen CMAKE_CXX_STANDARD (coming from e.g. Conan)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Check for default install prefix and cmake build type (UNIX)
 include(./cmake/check_cmake_install_prefix.cmake)
@@ -58,7 +62,7 @@ include(./cmake/set_library_naming_conventions.cmake)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Add a_util dependency
-find_package(a_util 5.4 REQUIRED)
+find_package(a_util 5.6.1 REQUIRED)
 
 # Include sources
 include(./ddlrepresentation/pkg_ddlrepresentation.sources)

@@ -26,7 +26,7 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-49, ERR_OUT_OF_RANGE)
+    _MAKE_RESULT(-49, ERR_OUT_OF_RANGE);
 
     /**
      * The abstract helper class for representation classes for DDL descriptions.

@@ -23,8 +23,8 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-37, ERR_NOT_INITIALIZED)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-37, ERR_NOT_INITIALIZED);
 
     DDLRefUnit::DDLRefUnit(IDDLUnit* poUnit, int const nPower, DDLPrefix* poPrefix) :
         _unit{poUnit},

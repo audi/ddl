@@ -30,8 +30,8 @@ namespace ddl
 {
 
 //define all needed error types and values locally
-_MAKE_RESULT(-5, ERR_INVALID_ARG)
-_MAKE_RESULT(-19, ERR_NOT_SUPPORTED)
+_MAKE_RESULT(-5, ERR_INVALID_ARG);
+_MAKE_RESULT(-19, ERR_NOT_SUPPORTED);
 
 template <typename T>
 a_util::result::Result get_typed_element_value(const StructLayoutElement& sElement, const void* pData,

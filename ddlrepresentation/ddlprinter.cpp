@@ -43,11 +43,11 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-4, ERR_POINTER)
-    _MAKE_RESULT(-16, ERR_NOT_IMPL)
-    _MAKE_RESULT(-20, ERR_NOT_FOUND)
-    _MAKE_RESULT(-38, ERR_FAILED)
-    _MAKE_RESULT(-44, ERR_INVALID_VERSION)
+    _MAKE_RESULT(-4, ERR_POINTER);
+    _MAKE_RESULT(-16, ERR_NOT_IMPL);
+    _MAKE_RESULT(-20, ERR_NOT_FOUND);
+    _MAKE_RESULT(-38, ERR_FAILED);
+    _MAKE_RESULT(-44, ERR_INVALID_VERSION);
 
     DDLPrinter::DDLPrinter(const bool& full_out):
         _dom{},

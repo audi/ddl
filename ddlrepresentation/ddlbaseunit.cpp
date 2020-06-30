@@ -23,8 +23,8 @@
 namespace ddl
 {
     //define all needed error types and values locally
-    _MAKE_RESULT(-5, ERR_INVALID_ARG)
-    _MAKE_RESULT(-37, ERR_NOT_INITIALIZED)
+    _MAKE_RESULT(-5, ERR_INVALID_ARG);
+    _MAKE_RESULT(-37, ERR_NOT_INITIALIZED);
 
     DDLBaseunit::DDLBaseunit() :
         _name{},

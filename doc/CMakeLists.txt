@@ -20,6 +20,9 @@ if(NOT EXCLUDE_PRODUCT_LICENSES)
 * [used_licenses.md](../license/used_licenses.md#)\n")
 endif()
 
+#configure_file(${CURRENT_IMPORTS_DIR}/licenses/list_used_licenses.md.in 
+#    ${CURRENT_IMPORTS_DIR}/licenses/list_used_licenses.md)
+
 ##continue only if enabled
 if(ddl_cmake_enable_documentation)
     ## Doxygen is not required. But only built html Doku if doxygen is found
